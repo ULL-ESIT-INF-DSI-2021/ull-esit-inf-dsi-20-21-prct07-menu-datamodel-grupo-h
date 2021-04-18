@@ -19,6 +19,9 @@ enum Operations {ADD = 'Add', DELETE = 'Delete', RETURN = 'Return to menu'};
 class App {
   private collection: JsonDatabase;
 
+  /**
+   * Contructor de la clase que inicializa el atributo collection como una JsonDatabase
+  */
   constructor() {
     this.collection = new JsonDatabase();
   }
