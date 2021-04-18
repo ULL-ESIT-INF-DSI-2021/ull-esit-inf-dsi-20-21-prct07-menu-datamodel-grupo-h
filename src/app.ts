@@ -14,9 +14,15 @@ import {Carte} from './carte';
 enum Commands {FOOD = 'Foods', PLATE = 'Plates', MENU = 'Menus', CARTA = 'Cartes', QUIT = 'Quit'};
 enum Operations {ADD = 'Add', DELETE = 'Delete', RETURN = 'Return to menu'};
 
+/**
+ * Clase que permite 
+*/
 class App {
   private collection: JsonDatabase;
 
+  /**
+   * Contructor de la clase que inicializa el atributo collection como una JsonDatabase
+  */
   constructor() {
     this.collection = new JsonDatabase();
   }
