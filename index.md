@@ -1946,3 +1946,626 @@ En `visualize()`, mostramos la carta con los menús y platos individuales, para 
 Luego en la función `makeOrder()`, hacemos la orden de comanda ya sea por un menú establecido dentro de nuestra carta o a través de un menú personalizable empezando de 0 o modificando ya uno hecho. Para ello, derivamos a las funciones `chooseStandardMenu()` como opción de menú preestablecido,  `choosePersonalizedMenu()` para escoger la opción para personalizar el menú de 0 que lo realiza la función `chooseMenuFromZero()`, o la opción para personalizar el menú a partir de uno realizado que lo realiza la función `chooseMenuFromOther()`.
 
 Por último, tenemos las funciones importantes como `addPlatesInCommand()` y `deletePlatesInCommand()` que permiten hacer la comunicación con el usuario para añadir o eliminar platos durante el proceso.
+
+### 5. Realización de pruebas (Spec)
+
+**Clase food**
+
+```ts
+/**
+ * Fichero de prueba para la clase food. En el se probarán los
+ * métodos que conforman la clase en su totalidad.
+ */
+import 'mocha';
+import {expect} from 'chai';
+import {Proteins} from "../src/food/proteins";
+import {Vegetables} from "../src/food/vegetables";
+import {Dairy} from "../src/food/dairy";
+import {Cereals} from "../src/food/cereals";
+import {Fruits} from "../src/food/fruits";
+
+export const egg = new Proteins("egg", "Spain", {carboHydrates: 10, proteins: 24, lipids: 1}, 5, "Proteins");
+export const zucchini = new Vegetables("zucchini", "Tenerife", {carboHydrates: 15, proteins: 2, lipids: 2}, 4, "Vegetables");
+export const cheese = new Dairy("cheese", "El Hierro", {carboHydrates: 20, proteins: 15, lipids: 20}, 8, "Dairy");
+export const bread = new Cereals("bread", "Arafo", {carboHydrates: 40, proteins: 5, lipids: 10}, 3, "Cereals");
+export const lemon = new Fruits("lemon", "Agaete", {carboHydrates: 18, proteins: 2, lipids: 2}, 4, "Fruits");
+const testSetters = new Proteins("generic", "generic", {carboHydrates: 1, proteins: 1, lipids: 1}, 5, "Proteins");
+
+// test proteins
+describe('Tests for Proteins', () => {
+  it('egg.getPrice() returns 5', () => {
+    expect(egg.getPrice()).to.be.equal(5);
+  });
+
+  it('egg.getName() returns egg', () => {
+    expect(egg.getName()).to.be.equal("egg");
+  });
+
+  it('egg.getLocation() returns Spain', () => {
+    expect(egg.getLocation()).to.be.equal("Spain");
+  });
+
+  it('egg.getMacroNutrients() returns {carboHydrates: 10, proteins: 24, lipids: 1}', () => {
+    expect(egg.getMacroNutrients()).to.be.eql({carboHydrates: 10, proteins: 24, lipids: 1 });
+  });
+
+  it('egg.getFoodGroup() returns Proteins', () => {
+    expect(egg.getFoodGroup()).to.be.equal("Proteins");
+  });
+});
+
+// test vegetables
+describe('Tests for Vegetables', () => {
+  it('zucchini.getPrice() returns 4', () => {
+    expect(zucchini.getPrice()).to.be.equal(4);
+  });
+
+  it('zucchini.getName() returns zucchini', () => {
+    expect(zucchini.getName()).to.be.equal("zucchini");
+  });
+
+  it('zucchini.getLocation() returns Tenerife', () => {
+    expect(zucchini.getLocation()).to.be.equal("Tenerife");
+  });
+
+  it('zucchini.getMacroNutrients() returns {carboHydrates: 15, proteins: 2, lipids: 2}', () => {
+    expect(zucchini.getMacroNutrients()).to.be.eql({carboHydrates: 15, proteins: 2, lipids: 2});
+  });
+
+  it('zucchini.getFoodGroup() returns Vegetables', () => {
+    expect(zucchini.getFoodGroup()).to.be.equal("Vegetables");
+  });
+});
+
+// test Dairy
+describe('Tests for Dairy', () => {
+  it('cheese.getPrice() returns 8', () => {
+    expect(cheese.getPrice()).to.be.equal(8);
+  });
+
+  it('cheese.getName() returns cheese', () => {
+    expect(cheese.getName()).to.be.equal("cheese");
+  });
+
+  it('cheese.getLocation() returns El Hierro', () => {
+    expect(cheese.getLocation()).to.be.equal("El Hierro");
+  });
+
+  it('cheese.getMacroNutrients() returns {carboHydrates: 20, proteins: 15, lipids: 20}', () => {
+    expect(cheese.getMacroNutrients()).to.be.eql({carboHydrates: 20, proteins: 15, lipids: 20});
+  });
+
+  it('cheese.getFoodGroup() returns Dairy', () => {
+    expect(cheese.getFoodGroup()).to.be.equal("Dairy");
+  });
+});
+
+// test Cereals
+describe('Tests for Cereals', () => {
+  it('bread.getPrice() returns 3', () => {
+    expect(bread.getPrice()).to.be.equal(3);
+  });
+
+  it('bread.getName() returns bread', () => {
+    expect(bread.getName()).to.be.equal("bread");
+  });
+
+  it('bread.getLocation() returns Arafo', () => {
+    expect(bread.getLocation()).to.be.equal("Arafo");
+  });
+
+  it('bread.getMacroNutrients() returns {carboHydrates: 40, proteins: 5, lipids: 10}', () => {
+    expect(bread.getMacroNutrients()).to.be.eql({carboHydrates: 40, proteins: 5, lipids: 10});
+  });
+
+  it('bread.getFoodGroup() returns Cereals', () => {
+    expect(bread.getFoodGroup()).to.be.equal("Cereals");
+  });
+});
+
+// test Fruits
+describe('Tests for Fruits', () => {
+  it('lemon.getPrice() returns 4', () => {
+    expect(lemon.getPrice()).to.be.equal(4);
+  });
+
+  it('lemon.getName() returns lemon', () => {
+    expect(lemon.getName()).to.be.equal("lemon");
+  });
+
+  it('lemon.getLocation() returns Agaete', () => {
+    expect(lemon.getLocation()).to.be.equal("Agaete");
+  });
+
+  it('lemon.getMacroNutrients() returns {carboHydrates: 18, proteins: 2, lipids: 2}', () => {
+    expect(lemon.getMacroNutrients()).to.be.eql({carboHydrates: 18, proteins: 2, lipids: 2});
+  });
+
+  it('lemon.getFoodGroup() returns Fruits', () => {
+    expect(lemon.getFoodGroup()).to.be.equal("Fruits");
+  });
+});
+
+// Test Setters
+testSetters.setName("fish");
+testSetters.setLocation("jinamar");
+testSetters.setMacroNutrients({carboHydrates: 18, proteins: 2, lipids: 2});
+testSetters.setPrice(20);
+
+describe('Tests for Food Setters', () => {
+  it('testSetters.getPrice() returns 20', () => {
+    expect(testSetters.getPrice()).to.be.equal(20);
+  });
+
+  it('testSetters.getName() returns egg', () => {
+    expect(testSetters.getName()).to.be.equal("fish");
+  });
+
+  it('testSetters.getLocation() returns jinamar', () => {
+    expect(testSetters.getLocation()).to.be.equal("jinamar");
+  });
+
+  it('testSetters.getMacroNutrients() returns {carboHydrates: 18, proteins: 2, lipids: 2}', () => {
+    expect(testSetters.getMacroNutrients()).to.be.eql({carboHydrates: 18, proteins: 2, lipids: 2});
+  });
+});
+```
+
+**Clase Plate**
+
+```ts
+/**
+ * Fichero de prueba para la clase plates. En el se probarán los
+ * métodos que conforman la clase en su totalidad.
+ */
+import 'mocha';
+import {expect} from 'chai';
+import {Proteins} from "../src/food/proteins";
+import {Vegetables} from "../src/food/vegetables";
+import {Dairy} from "../src/food/dairy";
+import {Fruits} from "../src/food/fruits";
+import {StarterPlate} from "../src/plate/starterPlate";
+import {FirstPlate} from "../src/plate/firstPlate";
+import {SecondPlate} from "../src/plate/secondPlate";
+import {DessertPlate} from "../src/plate/dessertPlate";
+import {egg, zucchini, cheese, bread, lemon} from "../tests/food.spec";
+
+export const chop = new Proteins("chop", "madrid", {carboHydrates: 15, proteins: 24, lipids: 9}, 5, "Proteins");
+export const lettuce = new Vegetables("lettuce", "La gomera", {carboHydrates: 10, proteins: 2, lipids: 2}, 2, "Vegetables");
+export const milk = new Dairy("milk", "Jinamar", {carboHydrates: 18, proteins: 14, lipids: 20}, 3, "Dairy");
+export const strawberry = new Fruits("strawberry", "Candelaria", {carboHydrates: 12, proteins: 3, lipids: 7}, 7, "Fruits");
+export const melon = new Fruits("melon", "Candelaria", {carboHydrates: 15, proteins: 7, lipids: 3}, 2, "Fruits");
+
+// Entrante
+export const starterPlateExamp = new StarterPlate("grilled cheese and bread", [[cheese, 1000], [bread, 1000], [milk, 1000]], "Starter");
+export const toChart1 = new StarterPlate("generic1", [[cheese, 1000], [bread, 1000], [melon, 1000]], "Starter");
+export const toChart2 = new StarterPlate("generic2", [[zucchini, 1000], [chop, 1000]], "Starter");
+const toTestSetters = new FirstPlate("mytest", [[zucchini, 1000], [chop, 1000]], "First");
+const toTestdelete = new FirstPlate("mytest", [[zucchini, 1000], [chop, 1000]], "First");
+
+
+// test StartedPlate
+describe('Tests for StarterPlates', () => {
+  it('starterPlateExamp.getName() returns grilled cheese and bread', () => {
+    expect(starterPlateExamp.getName()).to.be.equal("grilled cheese and bread");
+  });
+
+  it('starterPlateExamp.getFood() returns [cheese, bread, milk]', () => {
+    expect(starterPlateExamp.getFood()).to.be.eql([cheese, bread, milk]);
+  });
+
+  it('starterPlateExamp.getPrice() returns 14', () => {
+    expect(starterPlateExamp.getPrice()).to.be.equal(14);
+  });
+
+  it('starterPlateExamp.getNutritionalCompositions() returns {carboHydrates: 780, proteins: 340, lipids: 500}', () => {
+    expect(starterPlateExamp.getNutritionalComposition()).to.be.eql({carboHydrates: 780, proteins: 340, lipids: 500});
+  });
+
+  it('starterPlateExamp.getPredominantGroupFood() returns Dairy', () => {
+    expect(starterPlateExamp.getPredominantGroupFood()).to.be.equal("Dairy");
+  });
+
+  it('starterPlateExamp.getPlateCategory() returns Starter', () => {
+    expect(starterPlateExamp.getPlateCategory()).to.be.equal("Starter");
+  });
+});
+
+// Primer plato
+export const firstPlateExamp = new FirstPlate("meat with vegetables and egg", [[egg, 1000], [zucchini, 1000], [chop, 1000]], "First");
+
+// test firstPlate
+describe('Tests for FirstPlates', () => {
+  it('firstPlateExamp.getName() returns meat with vegetables and egg', () => {
+    expect(firstPlateExamp.getName()).to.be.equal("meat with vegetables and egg");
+  });
+
+  it('firstPlateExamp.getFood() returns [egg, zucchini, chop])', () => {
+    expect(firstPlateExamp.getFood()).to.be.eql([egg, zucchini, chop]);
+  });
+
+  it('firstPlateExamp.getPrice() returns 14', () => {
+    expect(firstPlateExamp.getPrice()).to.be.equal(14);
+  });
+
+  it('firstPlateExamp.getNutritionalCompositions() returns {carboHydrates: 400, proteins: 500, lipids: 120}', () => {
+    expect(firstPlateExamp.getNutritionalComposition()).to.be.eql({carboHydrates: 400, proteins: 500, lipids: 120});
+  });
+
+  it('firstPlateExamp.getPredominantGroupFood() returns proteins', () => {
+    expect(firstPlateExamp.getPredominantGroupFood()).to.be.equal("Proteins");
+  });
+
+  it('firstPlateExamp.getPlateCategory() returns First', () => {
+    expect(firstPlateExamp.getPlateCategory()).to.be.equal("First");
+  });
+});
+
+// segundo plato
+export const secondPlateExamp = new SecondPlate("Lemon boiled vegetables", [[lettuce, 1000], [zucchini, 1000], [lemon, 1000]], "Second");
+
+// test SecondPlate
+describe('Tests for SecondPlate', () => {
+  it('secondPlateExamp.getName() returns Lemon boiled vegetables', () => {
+    expect(secondPlateExamp.getName()).to.be.equal("Lemon boiled vegetables");
+  });
+
+  it('secondPlateExamp.getFood() returns [lettuce, zucchini,lemon])', () => {
+    expect(secondPlateExamp.getFood()).to.be.eql([lettuce, zucchini, lemon]);
+  });
+
+  it('secondPlateExamp.getPrice() returns 10', () => {
+    expect(secondPlateExamp.getPrice()).to.be.equal(10);
+  });
+
+  it('secondPlateExamp.getNutritionalCompositions() returns {carboHydrates: 400, proteins: 500, lipids: 120}', () => {
+    expect(secondPlateExamp.getNutritionalComposition()).to.be.eql({carboHydrates: 430, proteins: 60, lipids: 60});
+  });
+
+  it('secondPlateExamp.getPredominantGroupFood() returns vegetables', () => {
+    expect(secondPlateExamp.getPredominantGroupFood()).to.be.equal("Vegetables");
+  });
+
+  it('secondPlateExamp.getPlateCategory() returns Second', () => {
+    expect(secondPlateExamp.getPlateCategory()).to.be.equal("Second");
+  });
+});
+// postre
+export const dessertPlateExamp = new DessertPlate("melon, strawberry and bread", [[strawberry, 1000], [bread, 1000], [melon, 1000]], "Dessert");
+
+// test DessertPlate
+describe('Tests for DessertPlate', () => {
+  it('dessertPlateExamp.getName() returns melon, strawberry and bread', () => {
+    expect(dessertPlateExamp.getName()).to.be.equal("melon, strawberry and bread");
+  });
+
+  it('dessertPlateExamp.getFood() returns [lettuce, zucchini,lemon])', () => {
+    expect(dessertPlateExamp.getFood()).to.be.eql([strawberry, bread, melon]);
+  });
+
+  it('dessertPlateExamp.getPrice() returns 12', () => {
+    expect(dessertPlateExamp.getPrice()).to.be.equal(12);
+  });
+
+  it('dessertPlateExamp.getNutritionalCompositions() returns {carboHydrates: 670, proteins: 150, lipids: 200}', () => {
+    expect(dessertPlateExamp.getNutritionalComposition()).to.be.eql({carboHydrates: 670, proteins: 150, lipids: 200});
+  });
+
+  it('dessertPlateExamp.getPredominantGroupFood() returns Fruits', () => {
+    expect(dessertPlateExamp.getPredominantGroupFood()).to.be.equal("Fruits");
+  });
+
+  it('dessertPlateExamp.getPlateCategory() returns Dessert', () => {
+    expect(dessertPlateExamp.getPlateCategory()).to.be.equal("Dessert");
+  });
+});
+
+const randomPlate = new DessertPlate("random", [[bread, 1000], [melon, 1000], [strawberry, 1000]], "Dessert");
+describe('Tests for randomPlate', () => {
+  it('randomplate.getPredominantGroupFood() returns Fruits', () => {
+    expect(randomPlate.getPredominantGroupFood()).to.be.equal("Fruits");
+  });
+});
+
+// test addFood
+toTestSetters.addFood(lemon, 1000);
+describe('Tests for addFood from Plates', () => {
+  it('toTestSetters.getFood() returns [zucchini, chop, lemon]', () => {
+    expect(toTestSetters.getFood()).to.be.eql([zucchini, chop, lemon]);
+  });
+});
+
+// test getNumber
+describe('Tests for getNumber from Plates', () => {
+  it('toTestSetters.getNumber() returns [1000, 1000, 1000]', () => {
+    expect(toTestSetters.getNumber()).to.be.eql([1000, 1000, 1000]);
+  });
+});
+
+// test print
+describe('Tests for printPlate from Plates', () => {
+  it('toTestSetters.printPlate() returns', () => {
+    const aux: string = toTestSetters.printPlate();
+    expect(toTestSetters.printPlate()).to.be.equal(aux);
+  });
+});
+
+// test deletefood
+toTestdelete.deleteFood(zucchini);
+describe('Tests for toTestdelete from Plates', () => {
+  it('toTestdelete.getFood() returns [chop]', () => {
+    expect(toTestdelete.getFood()).to.be.eql([chop]);
+  });
+});
+```
+
+**Clase Menu**
+
+```ts
+/**
+ * Fichero de prueba para la clase Menu. En el se probarán los
+ * métodos que conforman la clase en su totalidad.
+ */
+import 'mocha';
+import {expect} from 'chai';
+import {Proteins} from "../src/food/proteins";
+import {Vegetables} from "../src/food/vegetables";
+import {Dairy} from "../src/food/dairy";
+import {Cereals} from "../src/food/cereals";
+import {Fruits} from "../src/food/fruits";
+import {DessertPlate} from '../src/plate/dessertPlate';
+import {FirstPlate} from '../src/plate/firstPlate';
+import {SecondPlate} from '../src/plate/secondPlate';
+import {StarterPlate} from '../src/plate/starterPlate';
+import {Menu} from '../src/menu';
+
+const egg = new Proteins("egg", "Spain", {carboHydrates: 10, proteins: 24, lipids: 1}, 5, "Proteins");
+const zucchini = new Vegetables("zucchini", "Tenerife", {carboHydrates: 15, proteins: 2, lipids: 2}, 4, "Vegetables");
+const cheese = new Dairy("cheese", "El Hierro", {carboHydrates: 20, proteins: 15, lipids: 20}, 8, "Dairy");
+const bread = new Cereals("bread", "Arafo", {carboHydrates: 40, proteins: 5, lipids: 10}, 3, "Cereals");
+const lemon = new Fruits("lemon", "Agaete", {carboHydrates: 18, proteins: 2, lipids: 2}, 4, "Fruits");
+const chop = new Proteins("chop", "madrid", {carboHydrates: 15, proteins: 24, lipids: 9}, 5, "Proteins");
+const lettuce = new Vegetables("lettuce", "La gomera", {carboHydrates: 10, proteins: 2, lipids: 2}, 2, "Vegetables");
+const milk = new Dairy("milk", "Jinamar", {carboHydrates: 18, proteins: 14, lipids: 20}, 3, "Dairy");
+const strawberry = new Fruits("strawberry", "Candelaria", {carboHydrates: 12, proteins: 3, lipids: 7}, 7, "Fruits");
+
+const starter = new StarterPlate("grilled cheese and bread", [[cheese, 1000], [bread, 1000], [milk, 1000]], "Starter");
+const first = new FirstPlate("meat with vegetables and egg", [[egg, 1000], [zucchini, 1000], [chop, 1000]], "First");
+const second = new SecondPlate("Lemon boiled vegetables", [[lettuce, 1000], [zucchini, 1000], [lemon, 1000]], "Second");
+const dessert = new DessertPlate("melon and strawberry", [[strawberry, 1000], [bread, 1000]], "Dessert");
+// Menu
+const menu = new Menu("menu1", [starter, first, second, dessert]);
+try {
+  const menufail = new Menu("menu2", [first, second]);
+} catch (error) {
+  console.log('');
+}
+
+try {
+  const menufail2 = new Menu("menuF", [first, second, second]);
+} catch (error) {
+  console.log('');
+}
+const menutoadd = new Menu("menu3", [starter, first, second]);
+
+describe('Tests for Menu', () => {
+  it('menu.getName() returns menu1', () => {
+    expect(menu.getName()).to.be.equal("menu1");
+  });
+
+  it('menu.validate returns true', () => {
+    expect(menu.validate()).to.be.equal(true);
+  });
+
+  it('menugetPrice() returns 48', () => {
+    expect(menu.getPrice()).to.be.equal(48);
+  });
+
+  it('menu.getPlates returns [starter, first, second, dessert]', () => {
+    expect(menu.getPlates()).to.be.eql([starter, first, second, dessert]);
+  });
+
+  it('menu.getNutritionalComposition returns {carboHydrates: 2130, lipids: 850, proteins: 980}', () => {
+    expect(menu.getNutritionalComposition()).to.be.eql({carboHydrates: 2130, lipids: 850, proteins: 980});
+  });
+
+  it('menugetPrice() returns ["Dairy", "Proteins", "Vegetables", "Fruits"]', () => {
+    expect(menu.getFoodList()).to.be.eql(["Dairy", "Proteins", "Vegetables", "Fruits"]);
+  });
+});
+
+menutoadd.addPlate(dessert);
+describe('Test for addPlates and deletePlates from Menu', () => {
+  it('menutoadd.getPlates returns [starter, first, second, dessert]', () => {
+    expect(menutoadd.getPlates()).to.be.eql([starter, first, second, dessert]);
+  });
+
+  it('menutoadd.deletePlates returns [starter, first, second, dessert]', () => {
+    menutoadd.deletePlate(["meat with vegetables and egg"]);
+    expect(menutoadd.getPlates().length).to.be.equal(3);
+  });
+});
+
+menutoadd.printMenu();
+```
+
+**Clase Carte**
+
+```ts
+/**
+ * Fichero de prueba para la clase Carte. En el se probarán los
+ * métodos que conforman la clase en su totalidad.
+ */
+import 'mocha';
+import {expect} from 'chai';
+import {Proteins} from "../src/food/proteins";
+import {Vegetables} from "../src/food/vegetables";
+import {Dairy} from "../src/food/dairy";
+import {Cereals} from "../src/food/cereals";
+import {Fruits} from "../src/food/fruits";
+import {DessertPlate} from '../src/plate/dessertPlate';
+import {FirstPlate} from '../src/plate/firstPlate';
+import {SecondPlate} from '../src/plate/secondPlate';
+import {StarterPlate} from '../src/plate/starterPlate';
+import {Menu} from '../src/menu';
+import {Carte} from "../src/carte";
+
+const egg = new Proteins("egg", "Spain", {carboHydrates: 10, proteins: 24, lipids: 1}, 5, "Proteins");
+const zucchini = new Vegetables("zucchini", "Tenerife", {carboHydrates: 15, proteins: 2, lipids: 2}, 4, "Vegetables");
+const cheese = new Dairy("cheese", "El Hierro", {carboHydrates: 20, proteins: 15, lipids: 20}, 8, "Dairy");
+const bread = new Cereals("bread", "Arafo", {carboHydrates: 40, proteins: 5, lipids: 10}, 3, "Cereals");
+const lemon = new Fruits("lemon", "Agaete", {carboHydrates: 18, proteins: 2, lipids: 2}, 4, "Fruits");
+const chop = new Proteins("chop", "madrid", {carboHydrates: 15, proteins: 24, lipids: 9}, 5, "Proteins");
+const lettuce = new Vegetables("lettuce", "La gomera", {carboHydrates: 10, proteins: 2, lipids: 2}, 2, "Vegetables");
+const milk = new Dairy("milk", "Jinamar", {carboHydrates: 18, proteins: 14, lipids: 20}, 3, "Dairy");
+const strawberry = new Fruits("strawberry", "Candelaria", {carboHydrates: 12, proteins: 3, lipids: 7}, 7, "Fruits");
+
+const starter = new StarterPlate("grilled cheese and bread", [[cheese, 1000], [bread, 1000], [milk, 1000]], "Starter");
+const first = new FirstPlate("meat with vegetables and egg", [[egg, 1000], [zucchini, 1000], [chop, 1000]], "First");
+const second = new SecondPlate("Lemon boiled vegetables", [[lettuce, 1000], [zucchini, 1000], [lemon, 1000]], "Second");
+const dessert = new DessertPlate("melon and strawberry", [[strawberry, 1000], [bread, 1000]], "Dessert");
+const menu = new Menu("menu1", [starter, first, second, dessert]);
+const carte = new Carte("Carte1", [menu], [first, second]);
+
+describe('Tests for Carte', () => {
+  it('carte.getName() returns Carte1', () => {
+    expect(carte.getName()).to.be.equal("Carte1");
+  });
+
+  it('carte.getMenus() returns [menu]', () => {
+    expect(carte.getMenus()).to.be.eql([menu]);
+  });
+
+  it('carte.getPlates() returns [first, second]', () => {
+    expect(carte.getPlates()).to.be.eql([first, second]);
+  });
+});
+```
+
+**Clase Collection**
+
+```ts
+/**
+ * Fichero de prueba para la clase plates. En el se probarán los
+ * métodos que conforman la clase en su totalidad.
+ */
+import 'mocha';
+import {expect} from 'chai';
+import {Collection} from '../src/collection';
+import {Proteins} from "../src/food/proteins";
+import {Vegetables} from "../src/food/vegetables";
+import {Dairy} from "../src/food/dairy";
+import {Cereals} from "../src/food/cereals";
+import {Fruits} from "../src/food/fruits";
+import {DessertPlate} from '../src/plate/dessertPlate';
+import {FirstPlate} from '../src/plate/firstPlate';
+import {SecondPlate} from '../src/plate/secondPlate';
+import {StarterPlate} from '../src/plate/starterPlate';
+import {Menu} from '../src/menu';
+import {Carte} from '../src/carte';
+
+const egg = new Proteins("egg", "Spain", {carboHydrates: 10, proteins: 24, lipids: 1}, 5, "Proteins");
+const zucchini = new Vegetables("zucchini", "Tenerife", {carboHydrates: 15, proteins: 2, lipids: 2}, 4, "Vegetables");
+const cheese = new Dairy("cheese", "El Hierro", {carboHydrates: 20, proteins: 15, lipids: 20}, 8, "Dairy");
+const bread = new Cereals("bread", "Arafo", {carboHydrates: 40, proteins: 5, lipids: 10}, 3, "Cereals");
+const lemon = new Fruits("lemon", "Agaete", {carboHydrates: 18, proteins: 2, lipids: 2}, 4, "Fruits");
+const chop = new Proteins("chop", "madrid", {carboHydrates: 15, proteins: 24, lipids: 9}, 5, "Proteins");
+const lettuce = new Vegetables("lettuce", "La gomera", {carboHydrates: 10, proteins: 2, lipids: 2}, 2, "Vegetables");
+const milk = new Dairy("milk", "Jinamar", {carboHydrates: 18, proteins: 14, lipids: 20}, 3, "Dairy");
+const strawberry = new Fruits("strawberry", "Candelaria", {carboHydrates: 12, proteins: 3, lipids: 7}, 7, "Fruits");
+const melon = new Fruits("melon", "Candelaria", {carboHydrates: 15, proteins: 7, lipids: 3}, 2, "Fruits");
+
+const starter = new StarterPlate("grilled cheese and bread", [[cheese, 1000], [bread, 1000], [milk, 1000]], "Starter");
+const first = new FirstPlate("meat with vegetables and egg", [[egg, 1000], [zucchini, 1000], [chop, 1000]], "First");
+const second = new SecondPlate("Lemon boiled vegetables", [[lettuce, 1000], [zucchini, 1000], [lemon, 1000]], "Second");
+const dessert = new DessertPlate("melon and strawberry", [[strawberry, 1000], [bread, 1000]], "Dessert");
+
+const menu = new Menu("menu1", [starter, first, second, dessert]);
+const carte = new Carte("Carta1", [menu], [starter, first, dessert]);
+
+const collection: Collection = new Collection();
+
+describe('Tests for Collection', () => {
+  it('Exist an object from class Collection', () => {
+    expect(collection).not.to.be.equal(null);
+  });
+
+  it('collection.addFood(cheese) insert a food element to an atribute map from Collection', () => {
+    collection.addFood(cheese);
+    expect(collection.getFoods().length).to.be.equal(1);
+  });
+
+  it('collection.addPlate(starter.getName(), [[\'cheese\', 1000], [\'bread\', 1000], [\'milk\', 1000]], "Starter") insert a plate element to an atribute map from Collection', () => {
+    collection.addFood(bread);
+    collection.addFood(milk);
+    collection.addFood(zucchini);
+    collection.addFood(melon);
+    collection.addFood(chop);
+    collection.addFood(strawberry);
+    collection.addFood(egg);
+    collection.addFood(lettuce);
+    collection.addFood(lemon);
+    collection.addPlate(starter.getName(), [['cheese', 1000], ['bread', 1000], ['milk', 1000]], "Starter");
+    collection.addPlate(starter.getName(), [['cheese', 1000], ['bread', 1000], ['milk', 1000]], "Starter");
+
+    expect(collection.getPlates().length).to.be.equal(1);
+  });
+
+  it('collection.addMenu() insert a menu element to an atribute map from Collection', () => {
+    collection.addPlate(first.getName(), [['egg', 1000], ['zucchini', 1000], ['chop', 1000]], "First");
+    collection.addPlate(dessert.getName(), [['strawberry', 1000], ['bread', 1000]], "Dessert");
+    collection.addPlate(second.getName(), [['lettuce', 1000], ['zucchini', 1000], ['lemon', 1000]], "Second");
+    collection.addMenu(menu.getName(), ["grilled cheese and bread", "meat with vegetables and egg", "melon and strawberry"]);
+    expect(collection.getMenus().length).to.be.equal(1);
+  });
+
+  it('collection.addCarta() insert a carte element to an atribute map from Collection', () => {
+    collection.addCarte(carte.getName(), ["menu1"], ['cheese', 'bread', 'milk']);
+    expect(collection.getCartes().length).to.be.equal(1);
+  });
+
+  it('collection.deleteFood("cheese") delete a food element to an atribute map from Collection', () => {
+    collection.deleteFood("cheese");
+    expect(collection.getFoods().length).to.be.equal(9);
+  });
+
+  it('collection.deletePlate(grilled cheese and bread) delete a plate element of the plates collection', () => {
+    collection.deletePlate("grilled cheese and bread");
+    expect(collection.getPlates().length).to.be.equal(3);
+  });
+
+  it('collection.deleteMenu(menu1) delete a menu element of the menus collection', () => {
+    collection.deleteMenu("menu1");
+    expect(collection.getMenus().length).to.be.equal(0);
+  });
+
+  it('collection.deleteCarte(Carta1) delete a carte element of the cartes collection', () => {
+    collection.deleteCarte("Carta1");
+    expect(collection.getCartes().length).to.be.equal(0);
+  });
+
+  it('[...collection.getPlateMap()].length returns 2', () => {
+    collection.getPlateMap();
+    expect([...collection.getPlateMap()].length).to.be.equal(3);
+  });
+
+  it('[...collection.getMenuMap()].length returns 0', () => {
+    collection.getMenuMap();
+    expect([...collection.getMenuMap()].length).to.be.equal(0);
+  });
+});
+```
+
+### 6. Conclusiones
+
+En conclusión, esta práctica nos ha permitido utilizar distintas estructuras de datos que hemos visto en la asignatura y hemos adquirido nuevos conocimientos sobre `inquirer` para la realización de menús en consola, al igual que con `lowdb` que nos ha permitido acercanos más a las bases de datos y a la funcionalidad que representan.
+
+En general, la carga de trabajo durante el desarrollo de este proyecto ha sido bastante elevada, aunque la división de tareas dentro del grupo facilitó bastante la organización a la hora de desarrollar el proyecto. A su vez, comparada con otras prácticas, esta ha sido mucho más compleja que sus predecesoras debido a la necesidad de aprender  nuevos conceptos nunca antes vistos por ningún integrante del grupo.
+
+### 7. Bibliografía
+
+- [Enunciado de la práctica](https://ull-esit-inf-dsi-2021.github.io/prct07-menu-dataModel/)
+- [Documentación Inquirer](https://www.npmjs.com/package/inquirer)
+- [Documentación lowdb](https://www.npmjs.com/package/lowdb)
+- [Información alimentos](https://drive.google.com/file/d/1B-jULJvgWmphWsZV1e3BG0fGL77jokSZ/view)
+
