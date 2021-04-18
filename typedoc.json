@@ -7,7 +7,7 @@
       "./src/collection.ts",
       "./src/command.ts",
       "./src/JsonDatabase.ts",
-      "/src/menu.ts"
+      "./src/menu.ts"
     ],
     "out": "./docs"
 }

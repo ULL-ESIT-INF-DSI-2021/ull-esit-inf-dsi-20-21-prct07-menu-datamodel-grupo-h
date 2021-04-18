@@ -20,7 +20,7 @@ export class Command {
   private collection: JsonDatabase;
   private menus: Menu[];
   private plates: [Plate, number][];
-/**
+  /**
  * Constructor de la clase que inicializará los parámetros
  * definidos anteriormente.
  */
@@ -29,7 +29,7 @@ export class Command {
     this.menus = [];
     this.plates = [];
   }
-/**
+  /**
  * Método que mostrará por consola el menú principal 
  *  de la comanda al usuario.
  */
@@ -54,7 +54,7 @@ export class Command {
       }
     });
   }
-/**
+  /**
  * Método que informará al usuario de las elecciones
  * que irá realizando desde el menú principal.
  */
@@ -72,7 +72,8 @@ export class Command {
 
     console.log('\n Thank you very much for your order');
   }
- /**
+
+  /**
  * Método que mostrará al usuario información sobre
  * los menús, cartas y platos disponibles.
  */
@@ -100,6 +101,7 @@ export class Command {
       }
     });
   }
+
   /**
    * Método que permitirá al usuario registrar un pedido
    */
@@ -118,7 +120,8 @@ export class Command {
       }
     });
   }
- /**
+
+  /**
  * Método que permitirá al usuario elegir un
  * menú predefinido
  */
@@ -153,7 +156,8 @@ export class Command {
       }
     });
   }
- /**
+
+  /**
  * Método que permitirá al usuario crear un menú desde cero o
  * crear uno a partir de otro ya existente.
  */
@@ -172,7 +176,8 @@ export class Command {
       }
     });
   }
- /**
+
+  /**
  * Método que permite crear un menu a partir de otro existente.
  */
   chooseMenuFromOther() {
@@ -204,6 +209,7 @@ export class Command {
       });
     });
   }
+
   /**
    * Método que permite al usuario añadir platos a la comanda
    */
@@ -234,6 +240,7 @@ export class Command {
       else this.deletePlatesInCommand(menu);
     });
   }
+
   /**
    * Método que permite eliminar platos de la comanda
    */
@@ -271,7 +278,8 @@ export class Command {
       }
     });
   }
-/**
+
+ /**
  * Método que permitirá al usuario crear un menú desde cero.
  */
   chooseMenuFromZero() {

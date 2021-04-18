@@ -10,10 +10,12 @@ import {Plate, plateCategory} from './plate/plate';
 import {Menu} from './menu';
 import {Carte} from './carte';
 
-
 enum Commands {FOOD = 'Foods', PLATE = 'Plates', MENU = 'Menus', CARTA = 'Cartes', QUIT = 'Quit'};
 enum Operations {ADD = 'Add', DELETE = 'Delete', RETURN = 'Return to menu'};
 
+/**
+ * Clase que permite modificar la base de datos.
+ */
 class App {
   private collection: JsonDatabase;
 
@@ -21,6 +23,9 @@ class App {
     this.collection = new JsonDatabase();
   }
 
+  /**
+  * Método que se trata del menú principal de la aplicación.
+ */
   mainPrompt(): void {
     console.clear();
     inquirer.prompt({
@@ -49,6 +54,9 @@ class App {
     });
   }
 
+  /**
+   * Método que permite añadir o eliminar elementos de la base de datos.
+   */
   process(option: string): void {
     console.clear();
     inquirer.prompt({
@@ -94,7 +102,8 @@ class App {
       }
     });
   }
-/**
+
+  /**
  * Método que permite añadir un alimento.
  * Se podrá rellenar las propiedades del alimento
  * nombre, macronutrientes y precio.
@@ -130,7 +139,7 @@ class App {
       type: 'input',
       name: 'price',
       message: 'Sets price\'s value:',
-    }]).then((answers) => { // MIRAR ESTO
+    }]).then((answers) => {
       let food: Food;
       const nutrients: macroNutrients = {
         carboHydrates: answers['carboHydrates'],
@@ -166,6 +175,7 @@ class App {
       });
     });
   }
+
   /**
    * Método que permite añadir un plato.a
    * Este metodo añadirá un plato en funcion de 
@@ -190,6 +200,7 @@ class App {
       this.addPlateAux(answers['name'], answers['type'], nameFood);
     });
   }
+
   /**
    * Método que permite añadir un plato.
    * Permite rellenar las propiedades del plato
@@ -229,6 +240,7 @@ class App {
       }
     });
   }
+
   /**
    * Método que permite añadir un menú.
    */
@@ -270,7 +282,8 @@ class App {
       });
     });
   }
-/**
+
+  /**
  * Método que permite añadir una carta.
  */
   addCarta() {
@@ -310,6 +323,7 @@ class App {
       });
     });
   }
+
   /**
    * Método que permite eliminar un alimento creado.
    */
@@ -343,6 +357,7 @@ class App {
       });
     });
   }
+
   /**
    * Método que permite eliminar un plato creado.
    */
@@ -376,6 +391,7 @@ class App {
       });
     });
   }
+
   /**
    * Método que permite crear un menu creado
    */
@@ -409,7 +425,8 @@ class App {
       });
     });
   }
-/**
+
+  /**
  * Método que permite eliminar una carta creada.
  */
   deleteCarta() {
