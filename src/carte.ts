@@ -1,5 +1,5 @@
-import {Plate, PlateType} from "./plate/plate";
-import {Menu, MenuType} from "./menu";
+import {Plate, PlateType} from './plate/plate';
+import {Menu, MenuType} from './menu';
 
 export type CarteType = {
   name: string;
