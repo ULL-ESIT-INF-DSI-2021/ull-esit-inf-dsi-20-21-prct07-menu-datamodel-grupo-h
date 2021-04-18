@@ -15,25 +15,37 @@ import {FirstPlate} from './plate/firstPlate';
 import {SecondPlate} from './plate/secondPlate';
 import {DessertPlate} from './plate/dessertPlate';
 
+/**
+ * Tipo que establece la forma que debe tener la base de datos.
+ */
 export type databaseType = {
     foods: FoodType[],
     plates: PlateType[],
     menus: MenuType[],
-    cartas: CarteType[],
+    cartes: CarteType[],
 }
 
+/**
+ * Clase que permite trabajar sobre la base de datos.
+ */
 export class JsonDatabase extends Collection {
     private database: lowdb.LowdbSync<databaseType>;
 
+    /**
+     * Constructor de la clase, donde se crea o abre el fichero ./src/database.json y se cargan los elementos en collection.
+     */
     constructor() {
       super();
       this.database = lowdb(new FileSync("./src/database.json"));
       this.loadFood();
       this.loadPlate();
       this.loadMenu();
-      this.loadCartas();
+      this.loadCartes();
     }
 
+    /**
+     * Método que permite cargar los alimentos que se encuentran la base de datos al objeto collection.
+     */
     loadFood() {
       if (this.database.has("foods").value()) {
         const dbItems = this.database.get("foods").value();
@@ -59,10 +71,13 @@ export class JsonDatabase extends Collection {
           super.addFood(aux);
         });
       } else {
-        this.database.set("foods", []).write(); // REVISARLO
+        this.database.set("foods", []).write();
       }
     }
-
+    
+    /**
+     * Método que permite cargar platos que se encuentren en la base de datos.
+     */
     loadPlate() {
       if (this.database.has("plates").value()) {
         const dbItems = this.database.get("plates").value();
@@ -97,6 +112,9 @@ export class JsonDatabase extends Collection {
       }
     }
 
+    /**
+     * Método que permite cargar menús que se encuentren en la base de datos.
+     */
     loadMenu() {
       if (this.database.has("menus").value()) {
         const dbItems = this.database.get("menus").value();
@@ -115,48 +133,68 @@ export class JsonDatabase extends Collection {
       }
     }
 
-    loadCartas() {
-      if (this.database.has("cartas").value()) {
-        const dbItems = this.database.get("cartas").value();
+    /**
+     * Método que permite cargar las cartas que se encuentran en la base de datos.
+     */    /**
+     * Método que cargará las cartas desde
+     */
+    loadCartes() {
+      if (this.database.has("cartes").value()) {
+        const dbItems = this.database.get("cartes").value();
         let auxMenu: Menu[];
         let auxPlate: Plate[];
-        dbItems.forEach((itemCarta: CarteType) => {
+        dbItems.forEach((itemCarte: CarteType) => {
           auxMenu = [];
           auxPlate = [];
-          itemCarta.menu.forEach((itemMenu: MenuType) => {
+          itemCarte.menu.forEach((itemMenu: MenuType) => {
             auxMenu.push(this.menus.get(itemMenu.name) as Menu);
           });
-          itemCarta.plates.forEach((itemPlate: PlateType) => {
+          itemCarte.plates.forEach((itemPlate: PlateType) => {
             auxPlate.push(this.plates.get(itemPlate.name) as Plate);
           });
-          const auxCarta = new Carte(itemCarta.name, auxMenu, auxPlate);
-          this.cartas.set(auxCarta.getName(), auxCarta);
+          const auxCarte = new Carte(itemCarte.name, auxMenu, auxPlate);
+          this.cartes.set(auxCarte.getName(), auxCarte);
         });
       } else {
-        this.database.set("cartas", []).write();
+        this.database.set("cartes", []).write();
       }
     }
 
+    /**
+     * Método que permite añadir un alimento a la base de datos.
+     */
     addFood(food: Food) {
       super.addFood(food);
       this.store('food');
     }
 
+    /**
+     * Método que permite añadir un plato a la base de datos.
+     */
     addPlate(plateName: string, food: [string, number][], plateType: plateCategory) {
       super.addPlate(plateName, food, plateType);
       this.store('plate');
     }
 
+    /**
+     * Método que permite añadir un menu a la base de datos.
+     */
     addMenu(menuName: string, platesName: string[]) {
       super.addMenu(menuName, platesName);
       this.store('menu');
     }
 
-    addCarta(nameCarta: string, menus: string[], plates: string[]) {
-      super.addCarta(nameCarta, menus, plates);
-      this.store('carta');
+    /**
+     * Método que permite añadir una carta a la base de datos.
+     */
+    addCarte(nameCarte: string, menus: string[], plates: string[]) {
+      super.addCarte(nameCarte, menus, plates);
+      this.store('carte');
     }
 
+    /**
+     * Método que permite eliminar una comida de la base de datos.
+     */
     deleteFoodJson(foodName: string[]) {
       foodName.forEach((element) => {
         super.deleteFood(element);
@@ -164,6 +202,9 @@ export class JsonDatabase extends Collection {
       this.store('food');
     }
 
+    /**
+     * Método que permite eliminar una plato de la base de datos.
+     */
     deletePlateJson(plateName: string[]) {
       plateName.forEach((element) => {
         super.deletePlate(element);
@@ -171,6 +212,9 @@ export class JsonDatabase extends Collection {
       this.store('plate');
     }
 
+    /**
+     * Método que permite eliminar un menu de la base de datos.
+     */
     deleteMenuJson(menuName: string[]) {
       menuName.forEach((element) => {
         super.deleteMenu(element);
@@ -178,14 +222,19 @@ export class JsonDatabase extends Collection {
       this.store('menu');
     }
 
-    deleteCartaJson(cartaName: string[]) {
-      cartaName.forEach((element) => {
-        super.deleteCarta(element);
+    /**
+     * Método que permite eliminar una carta de la base de datos.
+     */
+    deleteCarteJson(carteName: string[]) {
+      carteName.forEach((element) => {
+        super.deleteCarte(element);
       });
-      this.store('carta');
+      this.store('carte');
     }
 
-
+    /**
+     * Método que transforma al tipo PlateType.
+     */
     private toPlateType(elements: Plate[]): PlateType[] {
       const aux: PlateType[] = [];
       elements.forEach((element) => {
@@ -204,6 +253,9 @@ export class JsonDatabase extends Collection {
       return aux;
     }
 
+    /**
+     * Método que transforma al tipo MenuType.
+     */
     private toMenuType(elements: Menu[]): MenuType[] {
       const aux: MenuType[] = [];
       elements.forEach((element) => {
@@ -217,6 +269,9 @@ export class JsonDatabase extends Collection {
       return aux;
     }
 
+    /**
+     * Método que transforma al tipo CarteType.
+     */
     private toCarteType(elements: Carte[]): CarteType[] {
       const aux: CarteType[] = [];
       elements.forEach((element) => {
@@ -229,6 +284,9 @@ export class JsonDatabase extends Collection {
       return aux;
     }
 
+    /**
+     * Método que permite añadir elementos a la base de datos.
+     */
     private store(type: string) {
       switch (type) {
         case 'food':
@@ -239,9 +297,9 @@ export class JsonDatabase extends Collection {
         case 'menu':
           const auxMenu: MenuType[] = this.toMenuType(this.getMenus());
           this.database.set("menus", auxMenu).write();
-        case 'carta':
-          const auxCarta: CarteType[] = this.toCarteType(this.getCartas());
-          this.database.set("cartas", auxCarta).write();
+        case 'carte':
+          const auxCarte: CarteType[] = this.toCarteType(this.getCartes());
+          this.database.set("cartes", auxCarte).write();
       }
     }
 }

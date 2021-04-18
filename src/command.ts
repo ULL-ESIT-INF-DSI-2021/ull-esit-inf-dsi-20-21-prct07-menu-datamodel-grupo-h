@@ -3,21 +3,36 @@ import {Menu} from './menu';
 import {Plate} from './plate/plate';
 import {JsonDatabase} from './JsonDatabase';
 
-enum Commands {SHOW = 'See the carta', ORDER = 'Do an order', FINISH = 'Finish command'};
+/**
+ * Comandos a utilizar en la interfaz
+ */
+enum Commands {SHOW = 'See the carta', ORDER = 'Do an order', FINISH = 'Finish command'}; 
 
-enum MenusOrder {BASIC = 'Menu preestablecido', PERSONAL = 'Menu personalizado'};
-
+enum MenusOrder {BASIC = 'Menu preestablecido', PERSONAL = 'Menu personalizado'}; 
+/**
+ * Clase que permitira que el usuario cree su propio menú
+ * o que el usuario elija un menu predefinido
+ * @param collection información de alimentos, platos, menús y cartas
+ * @param menus array de menús predefinidos
+ * @param plates array de platos predefinidos
+ */
 export class Command {
   private collection: JsonDatabase;
   private menus: Menu[];
   private plates: [Plate, number][];
-
+/**
+ * Constructor de la clase que inicializará los parámetros
+ * definidos anteriormente.
+ */
   constructor() {
     this.collection = new JsonDatabase();
     this.menus = [];
     this.plates = [];
   }
-
+/**
+ * Método que mostrará por consola el menú principal 
+ *  de la comanda al usuario.
+ */
   mainMenu() {
     console.clear();
     inquirer.prompt({
@@ -39,7 +54,10 @@ export class Command {
       }
     });
   }
-
+/**
+ * Método que informará al usuario de las elecciones
+ * que irá realizando desde el menú principal.
+ */
   showCommand() {
     console.log('The menu you have requeste are: \n\n');
     this.menus.forEach((element) => {
@@ -54,16 +72,19 @@ export class Command {
 
     console.log('\n Thank you very much for your order');
   }
-
+ /**
+ * Método que mostrará al usuario información sobre
+ * los menús, cartas y platos disponibles.
+ */
   visualize() {
     console.clear();
     console.log('The carta is:\n');
     console.log('The menus are:\n');
-    this.collection.getMenus().forEach((element: Menu) => {
+    this.collection.getMenus().forEach((element) => {
       element.printMenu();
     });
     console.log('The plates are:\n');
-    this.collection.getPlates().forEach((element: Plate) => {
+    this.collection.getPlates().forEach((element) => {
       element.printPlate();
     });
     inquirer.prompt({
@@ -79,7 +100,9 @@ export class Command {
       }
     });
   }
-
+  /**
+   * Método que permitirá al usuario registrar un pedido
+   */
   makeOrder() {
     console.clear();
     inquirer.prompt({
@@ -95,10 +118,13 @@ export class Command {
       }
     });
   }
-
+ /**
+ * Método que permitirá al usuario elegir un
+ * menú predefinido
+ */
   chooseStandardMenu() {
     const nameMenu: string[] = [];
-    this.collection.getMenus().forEach(function(element: Menu) {
+    this.collection.getMenus().forEach(function(element) {
       nameMenu.push(element.getName());
     });
     console.clear();
@@ -127,7 +153,10 @@ export class Command {
       }
     });
   }
-
+ /**
+ * Método que permitirá al usuario crear un menú desde cero o
+ * crear uno a partir de otro ya existente.
+ */
   choosePersonalizedMenu() {
     console.clear();
     inquirer.prompt({
@@ -143,14 +172,16 @@ export class Command {
       }
     });
   }
-
+ /**
+ * Método que permite crear un menu a partir de otro existente.
+ */
   chooseMenuFromOther() {
     const nameMenu: string[] = [];
     const namePlate: string[] = [];
-    this.collection.getMenus().forEach(function(element: Menu) {
+    this.collection.getMenus().forEach(function(element) {
       nameMenu.push(element.getName());
     });
-    this.collection.getPlates().forEach(function(element: Plate) {
+    this.collection.getPlates().forEach(function(element) {
       namePlate.push(element.getName());
     });
     console.clear();
@@ -173,7 +204,9 @@ export class Command {
       });
     });
   }
-
+  /**
+   * Método que permite al usuario añadir platos a la comanda
+   */
   addPlatesInCommand(namePlate: string[], menu: Menu) {
     inquirer.prompt([{
       type: 'list',
@@ -201,7 +234,9 @@ export class Command {
       else this.deletePlatesInCommand(menu);
     });
   }
-
+  /**
+   * Método que permite eliminar platos de la comanda
+   */
   deletePlatesInCommand(menu: Menu) {
     const namePlate: string[] = [];
     menu.getPlates().forEach(function(element) {
@@ -236,10 +271,12 @@ export class Command {
       }
     });
   }
-
+/**
+ * Método que permitirá al usuario crear un menú desde cero.
+ */
   chooseMenuFromZero() {
     const namePlate: string[] = [];
-    this.collection.getPlates().forEach(function(element: Plate) {
+    this.collection.getPlates().forEach(function(element) {
       namePlate.push(element.getName());
     });
     inquirer.prompt([{

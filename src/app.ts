@@ -11,7 +11,7 @@ import {Menu} from './menu';
 import {Carte} from './carte';
 
 
-enum Commands {FOOD = 'Foods', PLATE = 'Plates', MENU = 'Menus', CARTA = 'Cartas', QUIT = 'Quit'};
+enum Commands {FOOD = 'Foods', PLATE = 'Plates', MENU = 'Menus', CARTA = 'Cartes', QUIT = 'Quit'};
 enum Operations {ADD = 'Add', DELETE = 'Delete', RETURN = 'Return to menu'};
 
 class App {
@@ -43,7 +43,7 @@ class App {
           this.process('carta');
           break;
         case Commands.QUIT:
-          console.log('Gracias por utilizar nuestra aplicación');
+          console.log('Thank you for using our application');
           return;
       }
     });
@@ -94,7 +94,11 @@ class App {
       }
     });
   }
-
+/**
+ * Método que permite añadir un alimento.
+ * Se podrá rellenar las propiedades del alimento
+ * nombre, macronutrientes y precio.
+ */
   addFood(): void {
     console.clear();
     inquirer.prompt([{
@@ -162,7 +166,11 @@ class App {
       });
     });
   }
-
+  /**
+   * Método que permite añadir un plato.a
+   * Este metodo añadirá un plato en funcion de 
+   * su categoría.
+   */
   addPlate(): void { // Controlar de alguna manera las entradas (validar)
     const nameFood: string[] = [];
     this.collection.getFoods().forEach(function(element: Food) {
@@ -182,7 +190,12 @@ class App {
       this.addPlateAux(answers['name'], answers['type'], nameFood);
     });
   }
-
+  /**
+   * Método que permite añadir un plato.
+   * Permite rellenar las propiedades del plato
+   * nombre, categoría, alimentos que lo conforman y
+   * cantidad de los alimentos
+   */
   addPlateAux(plateName: string, plateType: plateCategory, nameFood: string[], foodAndAmount: [string, number][] = []) {
     inquirer.prompt([{
       type: 'list',
@@ -216,7 +229,9 @@ class App {
       }
     });
   }
-
+  /**
+   * Método que permite añadir un menú.
+   */
   addMenu() {
     const namePlate: string[] = [];
     this.collection.getPlates().forEach(function(element: Plate) {
@@ -255,7 +270,9 @@ class App {
       });
     });
   }
-
+/**
+ * Método que permite añadir una carta.
+ */
   addCarta() {
     const nameMenus: string[] = [];
     const namePlates: string[] = [];
@@ -281,7 +298,7 @@ class App {
       message: 'Select the plates that will make up the menu:',
       choices: namePlates,
     }]).then((answers) => {
-      this.collection.addCarta(answers['name'], answers['menu'], answers['plate']);
+      this.collection.addCarte(answers['name'], answers['menu'], answers['plate']);
       inquirer.prompt([{
         type: 'list',
         name: 'continue',
@@ -293,7 +310,9 @@ class App {
       });
     });
   }
-
+  /**
+   * Método que permite eliminar un alimento creado.
+   */
   deleteFood(): void {
     const nameFood: string[] = [];
     this.collection.getFoods().forEach(function(element: Food) {
@@ -324,7 +343,9 @@ class App {
       });
     });
   }
-
+  /**
+   * Método que permite eliminar un plato creado.
+   */
   deletePlate(): void {
     const namePlates: string[] = [];
     this.collection.getPlates().forEach(function(element: Plate) {
@@ -355,7 +376,9 @@ class App {
       });
     });
   }
-
+  /**
+   * Método que permite crear un menu creado
+   */
   deleteMenu() {
     const nameMenus: string[] = [];
     this.collection.getMenus().forEach(function(element: Menu) {
@@ -386,18 +409,20 @@ class App {
       });
     });
   }
-
+/**
+ * Método que permite eliminar una carta creada.
+ */
   deleteCarta() {
-    const nameCartas: string[] = [];
-    this.collection.getCartas().forEach(function(element: Carte) {
-      nameCartas.push(element.getName());
+    const nameCartes: string[] = [];
+    this.collection.getCartes().forEach(function(element: Carte) {
+      nameCartes.push(element.getName());
     });
     console.clear();
     inquirer.prompt({
       type: 'checkbox',
       name: 'name',
       message: 'Choose the cards to delete',
-      choices: nameCartas,
+      choices: nameCartes,
       validate: function(answer) {
         if (answer.length < 1) {
           return 'You must choose a card';
@@ -405,7 +430,7 @@ class App {
         return true;
       },
     }).then((answers) => {
-      this.collection.deleteCartaJson(answers['name']);
+      this.collection.deleteCarteJson(answers['name']);
       inquirer.prompt([{
         type: 'list',
         name: 'continue',

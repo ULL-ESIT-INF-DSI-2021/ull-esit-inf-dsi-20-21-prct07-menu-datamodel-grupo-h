@@ -1,6 +1,1768 @@
 {
-  "foods": [],
-  "plates": [],
-  "menus": [],
-  "cartas": []
+  "foods": [
+    {
+      "name": "Apple",
+      "location": "France",
+      "macroNutrients": {
+        "carboHydrates": "12",
+        "proteins": "45",
+        "lipids": "42"
+      },
+      "price": "2",
+      "type": "Fruits"
+    },
+    {
+      "name": "Pear",
+      "location": "Spain",
+      "macroNutrients": {
+        "carboHydrates": "45",
+        "proteins": "12",
+        "lipids": "65"
+      },
+      "price": "1.43",
+      "type": "Fruits"
+    },
+    {
+      "name": "Lemon",
+      "location": "Spain",
+      "macroNutrients": {
+        "carboHydrates": "9",
+        "proteins": "0.7",
+        "lipids": "0.4"
+      },
+      "price": "2",
+      "type": "Fruits"
+    },
+    {
+      "name": "Kiwi",
+      "location": "Spain",
+      "macroNutrients": {
+        "carboHydrates": "10.6",
+        "proteins": "1.1",
+        "lipids": "0.5"
+      },
+      "price": "1.5",
+      "type": "Fruits"
+    },
+    {
+      "name": "Strawberry",
+      "location": "Spain",
+      "macroNutrients": {
+        "carboHydrates": "7",
+        "proteins": "0.7",
+        "lipids": "0.5"
+      },
+      "price": "3",
+      "type": "Fruits"
+    },
+    {
+      "name": "plum",
+      "location": "Spain",
+      "macroNutrients": {
+        "carboHydrates": "11",
+        "proteins": "0.6",
+        "lipids": "0"
+      },
+      "price": "2.5",
+      "type": "Fruits"
+    },
+    {
+      "name": "Cherry",
+      "location": "France",
+      "macroNutrients": {
+        "carboHydrates": "13.5",
+        "proteins": "0.8",
+        "lipids": "0.5"
+      },
+      "price": "3",
+      "type": "Fruits"
+    },
+    {
+      "name": "Avocado",
+      "location": "Canary Islands",
+      "macroNutrients": {
+        "carboHydrates": "5.9",
+        "proteins": "1.5",
+        "lipids": "12"
+      },
+      "price": "4",
+      "type": "Fruits"
+    },
+    {
+      "name": "Fig",
+      "location": "Spain",
+      "macroNutrients": {
+        "carboHydrates": "16",
+        "proteins": "1.2",
+        "lipids": "0"
+      },
+      "price": "1.5",
+      "type": "Fruits"
+    },
+    {
+      "name": "BlueBerry",
+      "location": "Canary Islands",
+      "macroNutrients": {
+        "carboHydrates": "6.1",
+        "proteins": "0.6",
+        "lipids": "0.6"
+      },
+      "price": "3.5",
+      "type": "Fruits"
+    },
+    {
+      "name": "Garlic",
+      "location": "Germany",
+      "macroNutrients": {
+        "carboHydrates": "23",
+        "proteins": "5.3",
+        "lipids": "0.3"
+      },
+      "price": "1",
+      "type": "Vegetables"
+    },
+    {
+      "name": "Pumpkin",
+      "location": "Portugal",
+      "macroNutrients": {
+        "carboHydrates": "2.2",
+        "proteins": "0.7",
+        "lipids": "0.2"
+      },
+      "price": "1.4",
+      "type": "Vegetables"
+    },
+    {
+      "name": "Lettuce",
+      "location": "Turkey",
+      "macroNutrients": {
+        "carboHydrates": "1.4",
+        "proteins": "1.34",
+        "lipids": "0.2"
+      },
+      "price": "0.8",
+      "type": "Vegetables"
+    },
+    {
+      "name": "Potatoe",
+      "location": "Andalucia",
+      "macroNutrients": {
+        "carboHydrates": "18",
+        "proteins": "2.5",
+        "lipids": "0.2"
+      },
+      "price": "1.79",
+      "type": "Vegetables"
+    },
+    {
+      "name": "Radish",
+      "location": "China",
+      "macroNutrients": {
+        "carboHydrates": "2.7",
+        "proteins": "1",
+        "lipids": "0.1"
+      },
+      "price": "2",
+      "type": "Vegetables"
+    },
+    {
+      "name": "Cabagge",
+      "location": "Denmark",
+      "macroNutrients": {
+        "carboHydrates": "3.4",
+        "proteins": "3.3",
+        "lipids": "0.3"
+      },
+      "price": "1",
+      "type": "Vegetables"
+    },
+    {
+      "name": "Carrot",
+      "location": "Spain",
+      "macroNutrients": {
+        "carboHydrates": "7.3",
+        "proteins": "0.9",
+        "lipids": "0.2"
+      },
+      "price": "0.7",
+      "type": "Vegetables"
+    },
+    {
+      "name": "Leek",
+      "location": "Colombia",
+      "macroNutrients": {
+        "carboHydrates": "7.5",
+        "proteins": "2",
+        "lipids": "0.4"
+      },
+      "price": "0.35",
+      "type": "Vegetables"
+    },
+    {
+      "name": "Sweet Potatoe",
+      "location": "Tenerife",
+      "macroNutrients": {
+        "carboHydrates": "21.5",
+        "proteins": "1.2",
+        "lipids": "0.6"
+      },
+      "price": "3",
+      "type": "Vegetables"
+    },
+    {
+      "name": "Onion",
+      "location": "England",
+      "macroNutrients": {
+        "carboHydrates": "7",
+        "proteins": "1.2",
+        "lipids": "0"
+      },
+      "price": "1.05",
+      "type": "Vegetables"
+    },
+    {
+      "name": "Blue cheese",
+      "location": "Italy",
+      "macroNutrients": {
+        "carboHydrates": "0",
+        "proteins": "21.1",
+        "lipids": "29.8"
+      },
+      "price": "21.44",
+      "type": "Dairy"
+    },
+    {
+      "name": "Greek Yogurt",
+      "location": "Grecia",
+      "macroNutrients": {
+        "carboHydrates": "5.4",
+        "proteins": "6.4",
+        "lipids": "10.2"
+      },
+      "price": "2.60",
+      "type": "Dairy"
+    },
+    {
+      "name": "Ice Cream",
+      "location": "Italy",
+      "macroNutrients": {
+        "carboHydrates": "25.4",
+        "proteins": "4.5",
+        "lipids": "10.1"
+      },
+      "price": "5",
+      "type": "Dairy"
+    },
+    {
+      "name": "Cow Milk",
+      "location": "Asturias",
+      "macroNutrients": {
+        "carboHydrates": "4.7",
+        "proteins": "3.1",
+        "lipids": "3.5"
+      },
+      "price": "0.5",
+      "type": "Dairy"
+    },
+    {
+      "name": "Chocolate Mousse",
+      "location": "Italy",
+      "macroNutrients": {
+        "carboHydrates": "22.7",
+        "proteins": "5.1",
+        "lipids": "8.8"
+      },
+      "price": "7",
+      "type": "Dairy"
+    },
+    {
+      "name": "Custard",
+      "location": "Rusia",
+      "macroNutrients": {
+        "carboHydrates": "16.8",
+        "proteins": "3.8",
+        "lipids": "4.2"
+      },
+      "price": "7",
+      "type": "Dairy"
+    },
+    {
+      "name": "Cream",
+      "location": "England",
+      "macroNutrients": {
+        "carboHydrates": "2",
+        "proteins": "1.5",
+        "lipids": "48.2"
+      },
+      "price": "4",
+      "type": "Dairy"
+    },
+    {
+      "name": "Flan",
+      "location": "France",
+      "macroNutrients": {
+        "carboHydrates": "21.6",
+        "proteins": "4.9",
+        "lipids": "2.3"
+      },
+      "price": "8",
+      "type": "Dairy"
+    },
+    {
+      "name": "Parmesan",
+      "location": "Italy",
+      "macroNutrients": {
+        "carboHydrates": "28.9",
+        "proteins": "30",
+        "lipids": "40"
+      },
+      "price": "25",
+      "type": "Dairy"
+    },
+    {
+      "name": "Catalan cream",
+      "location": "Spain",
+      "macroNutrients": {
+        "carboHydrates": "20.5",
+        "proteins": "3.6",
+        "lipids": "9.1"
+      },
+      "price": "7",
+      "type": "Dairy"
+    },
+    {
+      "name": "Integral rice",
+      "location": "China",
+      "macroNutrients": {
+        "carboHydrates": "73.4",
+        "proteins": "8",
+        "lipids": "2.2"
+      },
+      "price": "0.8",
+      "type": "Cereals"
+    },
+    {
+      "name": "Pasta",
+      "location": "Italy",
+      "macroNutrients": {
+        "carboHydrates": "75.8",
+        "proteins": "12",
+        "lipids": "1.8"
+      },
+      "price": "2",
+      "type": "Cereals"
+    },
+    {
+      "name": "Bread",
+      "location": "France",
+      "macroNutrients": {
+        "carboHydrates": "45.8",
+        "proteins": "6.2",
+        "lipids": "1"
+      },
+      "price": "2.43",
+      "type": "Cereals"
+    },
+    {
+      "name": "Gofio",
+      "location": "Canary Islands",
+      "macroNutrients": {
+        "carboHydrates": "64.8",
+        "proteins": "10.1",
+        "lipids": "2.74"
+      },
+      "price": "3.14",
+      "type": "Cereals"
+    },
+    {
+      "name": "Fritter",
+      "location": "Germany",
+      "macroNutrients": {
+        "carboHydrates": "40",
+        "proteins": "4.6",
+        "lipids": "20"
+      },
+      "price": "7",
+      "type": "Cereals"
+    },
+    {
+      "name": "Pizza base",
+      "location": "Italy",
+      "macroNutrients": {
+        "carboHydrates": "43.9",
+        "proteins": "6.7",
+        "lipids": "7.4"
+      },
+      "price": "10",
+      "type": "Cereals"
+    },
+    {
+      "name": "Donut",
+      "location": "France",
+      "macroNutrients": {
+        "carboHydrates": "47.2",
+        "proteins": "23",
+        "lipids": "6.1"
+      },
+      "price": "14.80",
+      "type": "Cereals"
+    },
+    {
+      "name": "Muesli",
+      "location": "England",
+      "macroNutrients": {
+        "carboHydrates": "67",
+        "proteins": "10.5",
+        "lipids": "8.1"
+      },
+      "price": "11.5",
+      "type": "Cereals"
+    },
+    {
+      "name": "Cookies",
+      "location": "England",
+      "macroNutrients": {
+        "carboHydrates": "64.5",
+        "proteins": "7",
+        "lipids": "21"
+      },
+      "price": "8",
+      "type": "Cereals"
+    },
+    {
+      "name": "Oatmeal",
+      "location": "Spain",
+      "macroNutrients": {
+        "carboHydrates": "59.8",
+        "proteins": "11.7",
+        "lipids": "7.1"
+      },
+      "price": "2.11",
+      "type": "Cereals"
+    },
+    {
+      "name": "Pork Chop",
+      "location": "Spain",
+      "macroNutrients": {
+        "carboHydrates": "0",
+        "proteins": "15.4",
+        "lipids": "29.5"
+      },
+      "price": "6.98",
+      "type": "Proteins"
+    },
+    {
+      "name": "Chicken",
+      "location": "United States",
+      "macroNutrients": {
+        "carboHydrates": "0",
+        "proteins": "20",
+        "lipids": "9.7"
+      },
+      "price": "4.3",
+      "type": "Proteins"
+    },
+    {
+      "name": "Beef",
+      "location": "United States",
+      "macroNutrients": {
+        "carboHydrates": "0",
+        "proteins": "20.7",
+        "lipids": "5.4"
+      },
+      "price": "15",
+      "type": "Proteins"
+    },
+    {
+      "name": "Sirloin",
+      "location": "United States",
+      "macroNutrients": {
+        "carboHydrates": "0",
+        "proteins": "18.2",
+        "lipids": "3.5"
+      },
+      "price": "36",
+      "type": "Proteins"
+    },
+    {
+      "name": "Chicken Egg",
+      "location": "Spain",
+      "macroNutrients": {
+        "carboHydrates": "0.7",
+        "proteins": "12.5",
+        "lipids": "11.1"
+      },
+      "price": "3.10",
+      "type": "Proteins"
+    },
+    {
+      "name": "Chickpea",
+      "location": "United States",
+      "macroNutrients": {
+        "carboHydrates": "49.6",
+        "proteins": "21.3",
+        "lipids": "5.4"
+      },
+      "price": "2.05",
+      "type": "Proteins"
+    },
+    {
+      "name": "Lentil",
+      "location": "Spain",
+      "macroNutrients": {
+        "carboHydrates": "48.8",
+        "proteins": "24.3",
+        "lipids": "1.9"
+      },
+      "price": "3.9",
+      "type": "Proteins"
+    },
+    {
+      "name": "Sausage",
+      "location": "France",
+      "macroNutrients": {
+        "carboHydrates": "0",
+        "proteins": "12.9",
+        "lipids": "27"
+      },
+      "price": "15",
+      "type": "Proteins"
+    },
+    {
+      "name": "Blood Sausage",
+      "location": "Spain",
+      "macroNutrients": {
+        "carboHydrates": "3",
+        "proteins": "19",
+        "lipids": "39.5"
+      },
+      "price": "9",
+      "type": "Proteins"
+    },
+    {
+      "name": "Tuna",
+      "location": "England",
+      "macroNutrients": {
+        "carboHydrates": "0",
+        "proteins": "23",
+        "lipids": "12"
+      },
+      "price": "38",
+      "type": "Proteins"
+    }
+  ],
+  "plates": [
+    {
+      "name": "Macedonia",
+      "macroNutrients": {
+        "carboHydrates": 77,
+        "proteins": 80.9,
+        "lipids": 129
+      },
+      "groupFood": "Fruits",
+      "price": 1.043,
+      "food": [
+        "Apple",
+        "Pear",
+        "Strawberry"
+      ],
+      "amount": [
+        "150",
+        "100",
+        "200"
+      ],
+      "type": "Dessert"
+    },
+    {
+      "name": "Ice cream with fruits",
+      "macroNutrients": {
+        "carboHydrates": 84.55,
+        "proteins": 14.350000000000001,
+        "lipids": 30.849999999999998
+      },
+      "groupFood": "Fruits",
+      "price": 1.75,
+      "food": [
+        "Ice Cream",
+        "Kiwi",
+        "BlueBerry"
+      ],
+      "amount": [
+        "300",
+        "50",
+        "50"
+      ],
+      "type": "Dessert"
+    },
+    {
+      "name": "Chocolate Mousse with Catalan Cream",
+      "macroNutrients": {
+        "carboHydrates": 67,
+        "proteins": 14.55,
+        "lipids": 26.550000000000004
+      },
+      "groupFood": "Dairy",
+      "price": 2.1,
+      "food": [
+        "Chocolate Mousse",
+        "Catalan cream"
+      ],
+      "amount": [
+        "250",
+        "50"
+      ],
+      "type": "Dessert"
+    },
+    {
+      "name": "Flan with cream",
+      "macroNutrients": {
+        "carboHydrates": 33.10000000000001,
+        "proteins": 7.875000000000001,
+        "lipids": 20.32
+      },
+      "groupFood": "Dairy",
+      "price": 1.3399999999999999,
+      "food": [
+        "Flan",
+        "Cream"
+      ],
+      "amount": [
+        "150",
+        "35"
+      ],
+      "type": "Dessert"
+    },
+    {
+      "name": "Cookies with Catalan Cream",
+      "macroNutrients": {
+        "carboHydrates": 214,
+        "proteins": 24.600000000000005,
+        "lipids": 72.1
+      },
+      "groupFood": "Cereals",
+      "price": 3.1,
+      "food": [
+        "Cookies",
+        "Catalan cream"
+      ],
+      "amount": [
+        "300",
+        "100"
+      ],
+      "type": "Dessert"
+    },
+    {
+      "name": "Chicken rice",
+      "macroNutrients": {
+        "carboHydrates": 330.30000000000007,
+        "proteins": 136,
+        "lipids": 58.39999999999999
+      },
+      "groupFood": "Cereals",
+      "price": 2.51,
+      "food": [
+        "Integral rice",
+        "Chicken"
+      ],
+      "amount": [
+        "450",
+        "500"
+      ],
+      "type": "Second"
+    },
+    {
+      "name": "pumpkin stuffed with meat",
+      "macroNutrients": {
+        "carboHydrates": 5.500000000000001,
+        "proteins": 32.8,
+        "lipids": 8.600000000000001
+      },
+      "groupFood": "Vegetables",
+      "price": 2.6,
+      "food": [
+        "Pumpkin",
+        "Beef"
+      ],
+      "amount": [
+        "250",
+        "150"
+      ],
+      "type": "Second"
+    },
+    {
+      "name": "bittersweet chicken",
+      "macroNutrients": {
+        "carboHydrates": 22.5,
+        "proteins": 71.75,
+        "lipids": 34.949999999999996
+      },
+      "groupFood": "Proteins",
+      "price": 2.005,
+      "food": [
+        "Chicken",
+        "Lemon"
+      ],
+      "amount": [
+        "350",
+        "250"
+      ],
+      "type": "Second"
+    },
+    {
+      "name": "rice three delights",
+      "macroNutrients": {
+        "carboHydrates": 277.975,
+        "proteins": 32.050000000000004,
+        "lipids": 8.540000000000003
+      },
+      "groupFood": "Vegetables",
+      "price": 0.43225,
+      "food": [
+        "Integral rice",
+        "Carrot",
+        "Leek"
+      ],
+      "amount": [
+        "350",
+        "150",
+        "135"
+      ],
+      "type": "Second"
+    },
+    {
+      "name": "Macaroni and cheese",
+      "macroNutrients": {
+        "carboHydrates": 216.95499999999998,
+        "proteins": 58.5,
+        "lipids": 42.5
+      },
+      "groupFood": "Cereals",
+      "price": 2.875,
+      "food": [
+        "Pasta",
+        "Parmesan"
+      ],
+      "amount": [
+        "250",
+        "95"
+      ],
+      "type": "Second"
+    },
+    {
+      "name": "grilled cheese with bread",
+      "macroNutrients": {
+        "carboHydrates": 206.1,
+        "proteins": 96.475,
+        "lipids": 101.35
+      },
+      "groupFood": "Dairy",
+      "price": 8.0615,
+      "food": [
+        "Blue cheese",
+        "Bread"
+      ],
+      "amount": [
+        "325",
+        "450"
+      ],
+      "type": "Starter"
+    },
+    {
+      "name": "Avocado salad",
+      "macroNutrients": {
+        "carboHydrates": 21.782,
+        "proteins": 10.5332,
+        "lipids": 30.791
+      },
+      "groupFood": "Vegetables",
+      "price": 1.2933999999999999,
+      "food": [
+        "Avocado",
+        "Lettuce",
+        "Cabagge"
+      ],
+      "amount": [
+        "250",
+        "223",
+        "115"
+      ],
+      "type": "Starter"
+    },
+    {
+      "name": "Tuna croquettes",
+      "macroNutrients": {
+        "carboHydrates": 109.561,
+        "proteins": 138.325,
+        "lipids": 75.753
+      },
+      "groupFood": "Proteins",
+      "price": 17.5353,
+      "food": [
+        "Potatoe",
+        "Tuna",
+        "Chicken Egg"
+      ],
+      "amount": [
+        "600",
+        "415",
+        "223"
+      ],
+      "type": "Starter"
+    },
+    {
+      "name": "Sushi",
+      "macroNutrients": {
+        "carboHydrates": 361.19700000000006,
+        "proteins": 184.315,
+        "lipids": 124.71
+      },
+      "groupFood": "Fruits",
+      "price": 25.040000000000003,
+      "food": [
+        "Avocado",
+        "Integral rice",
+        "Tuna",
+        "Apple"
+      ],
+      "amount": [
+        "333",
+        "465",
+        "614",
+        "2"
+      ],
+      "type": "Starter"
+    },
+    {
+      "name": "squash stuffed with rice",
+      "macroNutrients": {
+        "carboHydrates": 290.32,
+        "proteins": 33.106,
+        "lipids": 9.128
+      },
+      "groupFood": "Vegetables",
+      "price": 0.754,
+      "food": [
+        "Pumpkin",
+        "Integral rice"
+      ],
+      "amount": [
+        "318",
+        "386"
+      ],
+      "type": "Starter"
+    },
+    {
+      "name": "Paste with tuna",
+      "macroNutrients": {
+        "carboHydrates": 238.77,
+        "proteins": 95.3,
+        "lipids": 35.67
+      },
+      "groupFood": "Proteins",
+      "price": 10.13,
+      "food": [
+        "Tuna",
+        "Pasta"
+      ],
+      "amount": [
+        "250",
+        "315"
+      ],
+      "type": "First"
+    },
+    {
+      "name": "garlic soup",
+      "macroNutrients": {
+        "carboHydrates": 35.9,
+        "proteins": 32.95,
+        "lipids": 22.65
+      },
+      "groupFood": "Vegetables",
+      "price": 0.77,
+      "food": [
+        "Garlic",
+        "Chicken Egg"
+      ],
+      "amount": [
+        "150",
+        "200"
+      ],
+      "type": "First"
+    },
+    {
+      "name": "Russian salad",
+      "macroNutrients": {
+        "carboHydrates": 107.11,
+        "proteins": 33.230000000000004,
+        "lipids": 18.09
+      },
+      "groupFood": "Vegetables",
+      "price": 1.5139999999999998,
+      "food": [
+        "Carrot",
+        "Potatoe",
+        "Chicken Egg"
+      ],
+      "amount": [
+        "220",
+        "500",
+        "150"
+      ],
+      "type": "First"
+    },
+    {
+      "name": "meat with potatoes",
+      "macroNutrients": {
+        "carboHydrates": 56.699999999999996,
+        "proteins": 60.543,
+        "lipids": 101.52
+      },
+      "groupFood": "Vegetables",
+      "price": 2.95101,
+      "food": [
+        "Potatoe",
+        "Pork Chop"
+      ],
+      "amount": [
+        "315",
+        "342"
+      ],
+      "type": "First"
+    }
+  ],
+  "menus": [
+    {
+      "name": "Menu 1",
+      "macroNutrients": {
+        "carboHydrates": 903.72,
+        "proteins": 346.481,
+        "lipids": 297.878
+      },
+      "plates": [
+        {
+          "name": "Macedonia",
+          "macroNutrients": {
+            "carboHydrates": 77,
+            "proteins": 80.9,
+            "lipids": 129
+          },
+          "groupFood": "Fruits",
+          "price": 1.043,
+          "food": [
+            "Apple",
+            "Pear",
+            "Strawberry"
+          ],
+          "amount": [
+            "150",
+            "100",
+            "200"
+          ],
+          "type": "Dessert"
+        },
+        {
+          "name": "Chicken rice",
+          "macroNutrients": {
+            "carboHydrates": 330.30000000000007,
+            "proteins": 136,
+            "lipids": 58.39999999999999
+          },
+          "groupFood": "Cereals",
+          "price": 2.51,
+          "food": [
+            "Integral rice",
+            "Chicken"
+          ],
+          "amount": [
+            "450",
+            "500"
+          ],
+          "type": "Second"
+        },
+        {
+          "name": "grilled cheese with bread",
+          "macroNutrients": {
+            "carboHydrates": 206.1,
+            "proteins": 96.475,
+            "lipids": 101.35
+          },
+          "groupFood": "Dairy",
+          "price": 8.0615,
+          "food": [
+            "Blue cheese",
+            "Bread"
+          ],
+          "amount": [
+            "325",
+            "450"
+          ],
+          "type": "Starter"
+        },
+        {
+          "name": "squash stuffed with rice",
+          "macroNutrients": {
+            "carboHydrates": 290.32,
+            "proteins": 33.106,
+            "lipids": 9.128
+          },
+          "groupFood": "Vegetables",
+          "price": 0.754,
+          "food": [
+            "Pumpkin",
+            "Integral rice"
+          ],
+          "amount": [
+            "318",
+            "386"
+          ],
+          "type": "Starter"
+        }
+      ],
+      "price": 12.3685
+    },
+    {
+      "name": "Menu 2",
+      "macroNutrients": {
+        "carboHydrates": 350.602,
+        "proteins": 152.9832,
+        "lipids": 105.911
+      },
+      "plates": [
+        {
+          "name": "Ice cream with fruits",
+          "macroNutrients": {
+            "carboHydrates": 84.55,
+            "proteins": 14.350000000000001,
+            "lipids": 30.849999999999998
+          },
+          "groupFood": "Fruits",
+          "price": 1.75,
+          "food": [
+            "Ice Cream",
+            "Kiwi",
+            "BlueBerry"
+          ],
+          "amount": [
+            "300",
+            "50",
+            "50"
+          ],
+          "type": "Dessert"
+        },
+        {
+          "name": "pumpkin stuffed with meat",
+          "macroNutrients": {
+            "carboHydrates": 5.500000000000001,
+            "proteins": 32.8,
+            "lipids": 8.600000000000001
+          },
+          "groupFood": "Vegetables",
+          "price": 2.6,
+          "food": [
+            "Pumpkin",
+            "Beef"
+          ],
+          "amount": [
+            "250",
+            "150"
+          ],
+          "type": "Second"
+        },
+        {
+          "name": "Avocado salad",
+          "macroNutrients": {
+            "carboHydrates": 21.782,
+            "proteins": 10.5332,
+            "lipids": 30.791
+          },
+          "groupFood": "Vegetables",
+          "price": 1.2933999999999999,
+          "food": [
+            "Avocado",
+            "Lettuce",
+            "Cabagge"
+          ],
+          "amount": [
+            "250",
+            "223",
+            "115"
+          ],
+          "type": "Starter"
+        },
+        {
+          "name": "Paste with tuna",
+          "macroNutrients": {
+            "carboHydrates": 238.77,
+            "proteins": 95.3,
+            "lipids": 35.67
+          },
+          "groupFood": "Proteins",
+          "price": 10.13,
+          "food": [
+            "Tuna",
+            "Pasta"
+          ],
+          "amount": [
+            "250",
+            "315"
+          ],
+          "type": "First"
+        }
+      ],
+      "price": 15.7734
+    },
+    {
+      "name": "Menu 3",
+      "macroNutrients": {
+        "carboHydrates": 672.2720000000002,
+        "proteins": 224.24,
+        "lipids": 153.57
+      },
+      "plates": [
+        {
+          "name": "Flan with cream",
+          "macroNutrients": {
+            "carboHydrates": 33.10000000000001,
+            "proteins": 7.875000000000001,
+            "lipids": 20.32
+          },
+          "groupFood": "Dairy",
+          "price": 1.3399999999999999,
+          "food": [
+            "Flan",
+            "Cream"
+          ],
+          "amount": [
+            "150",
+            "35"
+          ],
+          "type": "Dessert"
+        },
+        {
+          "name": "rice three delights",
+          "macroNutrients": {
+            "carboHydrates": 277.975,
+            "proteins": 32.050000000000004,
+            "lipids": 8.540000000000003
+          },
+          "groupFood": "Vegetables",
+          "price": 0.43225,
+          "food": [
+            "Integral rice",
+            "Carrot",
+            "Leek"
+          ],
+          "amount": [
+            "350",
+            "150",
+            "135"
+          ],
+          "type": "Second"
+        },
+        {
+          "name": "Sushi",
+          "macroNutrients": {
+            "carboHydrates": 361.19700000000006,
+            "proteins": 184.315,
+            "lipids": 124.71
+          },
+          "groupFood": "Fruits",
+          "price": 25.040000000000003,
+          "food": [
+            "Avocado",
+            "Integral rice",
+            "Tuna",
+            "Apple"
+          ],
+          "amount": [
+            "333",
+            "465",
+            "614",
+            "2"
+          ],
+          "type": "Starter"
+        }
+      ],
+      "price": 26.812250000000002
+    },
+    {
+      "name": "Menu 4",
+      "macroNutrients": {
+        "carboHydrates": 319.85499999999996,
+        "proteins": 106,
+        "lipids": 91.70000000000002
+      },
+      "plates": [
+        {
+          "name": "Chocolate Mousse with Catalan Cream",
+          "macroNutrients": {
+            "carboHydrates": 67,
+            "proteins": 14.55,
+            "lipids": 26.550000000000004
+          },
+          "groupFood": "Dairy",
+          "price": 2.1,
+          "food": [
+            "Chocolate Mousse",
+            "Catalan cream"
+          ],
+          "amount": [
+            "250",
+            "50"
+          ],
+          "type": "Dessert"
+        },
+        {
+          "name": "Macaroni and cheese",
+          "macroNutrients": {
+            "carboHydrates": 216.95499999999998,
+            "proteins": 58.5,
+            "lipids": 42.5
+          },
+          "groupFood": "Cereals",
+          "price": 2.875,
+          "food": [
+            "Pasta",
+            "Parmesan"
+          ],
+          "amount": [
+            "250",
+            "95"
+          ],
+          "type": "Second"
+        },
+        {
+          "name": "garlic soup",
+          "macroNutrients": {
+            "carboHydrates": 35.9,
+            "proteins": 32.95,
+            "lipids": 22.65
+          },
+          "groupFood": "Vegetables",
+          "price": 0.77,
+          "food": [
+            "Garlic",
+            "Chicken Egg"
+          ],
+          "amount": [
+            "150",
+            "200"
+          ],
+          "type": "First"
+        }
+      ],
+      "price": 5.744999999999999
+    },
+    {
+      "name": "Menu 5",
+      "macroNutrients": {
+        "carboHydrates": 705.1700000000001,
+        "proteins": 183.456,
+        "lipids": 98.37799999999999
+      },
+      "plates": [
+        {
+          "name": "Ice cream with fruits",
+          "macroNutrients": {
+            "carboHydrates": 84.55,
+            "proteins": 14.350000000000001,
+            "lipids": 30.849999999999998
+          },
+          "groupFood": "Fruits",
+          "price": 1.75,
+          "food": [
+            "Ice Cream",
+            "Kiwi",
+            "BlueBerry"
+          ],
+          "amount": [
+            "300",
+            "50",
+            "50"
+          ],
+          "type": "Dessert"
+        },
+        {
+          "name": "Chicken rice",
+          "macroNutrients": {
+            "carboHydrates": 330.30000000000007,
+            "proteins": 136,
+            "lipids": 58.39999999999999
+          },
+          "groupFood": "Cereals",
+          "price": 2.51,
+          "food": [
+            "Integral rice",
+            "Chicken"
+          ],
+          "amount": [
+            "450",
+            "500"
+          ],
+          "type": "Second"
+        },
+        {
+          "name": "squash stuffed with rice",
+          "macroNutrients": {
+            "carboHydrates": 290.32,
+            "proteins": 33.106,
+            "lipids": 9.128
+          },
+          "groupFood": "Vegetables",
+          "price": 0.754,
+          "food": [
+            "Pumpkin",
+            "Integral rice"
+          ],
+          "amount": [
+            "318",
+            "386"
+          ],
+          "type": "Starter"
+        }
+      ],
+      "price": 5.013999999999999
+    }
+  ],
+  "cartes": [
+    {
+      "name": "Carta 1",
+      "menu": [
+        {
+          "name": "Menu 1",
+          "macroNutrients": {
+            "carboHydrates": 903.72,
+            "proteins": 346.481,
+            "lipids": 297.878
+          },
+          "plates": [
+            {
+              "name": "Macedonia",
+              "macroNutrients": {
+                "carboHydrates": 77,
+                "proteins": 80.9,
+                "lipids": 129
+              },
+              "groupFood": "Fruits",
+              "price": 1.043,
+              "food": [
+                "Apple",
+                "Pear",
+                "Strawberry"
+              ],
+              "amount": [
+                "150",
+                "100",
+                "200"
+              ],
+              "type": "Dessert"
+            },
+            {
+              "name": "Chicken rice",
+              "macroNutrients": {
+                "carboHydrates": 330.30000000000007,
+                "proteins": 136,
+                "lipids": 58.39999999999999
+              },
+              "groupFood": "Cereals",
+              "price": 2.51,
+              "food": [
+                "Integral rice",
+                "Chicken"
+              ],
+              "amount": [
+                "450",
+                "500"
+              ],
+              "type": "Second"
+            },
+            {
+              "name": "grilled cheese with bread",
+              "macroNutrients": {
+                "carboHydrates": 206.1,
+                "proteins": 96.475,
+                "lipids": 101.35
+              },
+              "groupFood": "Dairy",
+              "price": 8.0615,
+              "food": [
+                "Blue cheese",
+                "Bread"
+              ],
+              "amount": [
+                "325",
+                "450"
+              ],
+              "type": "Starter"
+            },
+            {
+              "name": "squash stuffed with rice",
+              "macroNutrients": {
+                "carboHydrates": 290.32,
+                "proteins": 33.106,
+                "lipids": 9.128
+              },
+              "groupFood": "Vegetables",
+              "price": 0.754,
+              "food": [
+                "Pumpkin",
+                "Integral rice"
+              ],
+              "amount": [
+                "318",
+                "386"
+              ],
+              "type": "Starter"
+            }
+          ],
+          "price": 12.3685
+        },
+        {
+          "name": "Menu 2",
+          "macroNutrients": {
+            "carboHydrates": 350.602,
+            "proteins": 152.9832,
+            "lipids": 105.911
+          },
+          "plates": [
+            {
+              "name": "Ice cream with fruits",
+              "macroNutrients": {
+                "carboHydrates": 84.55,
+                "proteins": 14.350000000000001,
+                "lipids": 30.849999999999998
+              },
+              "groupFood": "Fruits",
+              "price": 1.75,
+              "food": [
+                "Ice Cream",
+                "Kiwi",
+                "BlueBerry"
+              ],
+              "amount": [
+                "300",
+                "50",
+                "50"
+              ],
+              "type": "Dessert"
+            },
+            {
+              "name": "pumpkin stuffed with meat",
+              "macroNutrients": {
+                "carboHydrates": 5.500000000000001,
+                "proteins": 32.8,
+                "lipids": 8.600000000000001
+              },
+              "groupFood": "Vegetables",
+              "price": 2.6,
+              "food": [
+                "Pumpkin",
+                "Beef"
+              ],
+              "amount": [
+                "250",
+                "150"
+              ],
+              "type": "Second"
+            },
+            {
+              "name": "Avocado salad",
+              "macroNutrients": {
+                "carboHydrates": 21.782,
+                "proteins": 10.5332,
+                "lipids": 30.791
+              },
+              "groupFood": "Vegetables",
+              "price": 1.2933999999999999,
+              "food": [
+                "Avocado",
+                "Lettuce",
+                "Cabagge"
+              ],
+              "amount": [
+                "250",
+                "223",
+                "115"
+              ],
+              "type": "Starter"
+            },
+            {
+              "name": "Paste with tuna",
+              "macroNutrients": {
+                "carboHydrates": 238.77,
+                "proteins": 95.3,
+                "lipids": 35.67
+              },
+              "groupFood": "Proteins",
+              "price": 10.13,
+              "food": [
+                "Tuna",
+                "Pasta"
+              ],
+              "amount": [
+                "250",
+                "315"
+              ],
+              "type": "First"
+            }
+          ],
+          "price": 15.7734
+        },
+        {
+          "name": "Menu 3",
+          "macroNutrients": {
+            "carboHydrates": 672.2720000000002,
+            "proteins": 224.24,
+            "lipids": 153.57
+          },
+          "plates": [
+            {
+              "name": "Flan with cream",
+              "macroNutrients": {
+                "carboHydrates": 33.10000000000001,
+                "proteins": 7.875000000000001,
+                "lipids": 20.32
+              },
+              "groupFood": "Dairy",
+              "price": 1.3399999999999999,
+              "food": [
+                "Flan",
+                "Cream"
+              ],
+              "amount": [
+                "150",
+                "35"
+              ],
+              "type": "Dessert"
+            },
+            {
+              "name": "rice three delights",
+              "macroNutrients": {
+                "carboHydrates": 277.975,
+                "proteins": 32.050000000000004,
+                "lipids": 8.540000000000003
+              },
+              "groupFood": "Vegetables",
+              "price": 0.43225,
+              "food": [
+                "Integral rice",
+                "Carrot",
+                "Leek"
+              ],
+              "amount": [
+                "350",
+                "150",
+                "135"
+              ],
+              "type": "Second"
+            },
+            {
+              "name": "Sushi",
+              "macroNutrients": {
+                "carboHydrates": 361.19700000000006,
+                "proteins": 184.315,
+                "lipids": 124.71
+              },
+              "groupFood": "Fruits",
+              "price": 25.040000000000003,
+              "food": [
+                "Avocado",
+                "Integral rice",
+                "Tuna",
+                "Apple"
+              ],
+              "amount": [
+                "333",
+                "465",
+                "614",
+                "2"
+              ],
+              "type": "Starter"
+            }
+          ],
+          "price": 26.812250000000002
+        },
+        {
+          "name": "Menu 4",
+          "macroNutrients": {
+            "carboHydrates": 319.85499999999996,
+            "proteins": 106,
+            "lipids": 91.70000000000002
+          },
+          "plates": [
+            {
+              "name": "Chocolate Mousse with Catalan Cream",
+              "macroNutrients": {
+                "carboHydrates": 67,
+                "proteins": 14.55,
+                "lipids": 26.550000000000004
+              },
+              "groupFood": "Dairy",
+              "price": 2.1,
+              "food": [
+                "Chocolate Mousse",
+                "Catalan cream"
+              ],
+              "amount": [
+                "250",
+                "50"
+              ],
+              "type": "Dessert"
+            },
+            {
+              "name": "Macaroni and cheese",
+              "macroNutrients": {
+                "carboHydrates": 216.95499999999998,
+                "proteins": 58.5,
+                "lipids": 42.5
+              },
+              "groupFood": "Cereals",
+              "price": 2.875,
+              "food": [
+                "Pasta",
+                "Parmesan"
+              ],
+              "amount": [
+                "250",
+                "95"
+              ],
+              "type": "Second"
+            },
+            {
+              "name": "garlic soup",
+              "macroNutrients": {
+                "carboHydrates": 35.9,
+                "proteins": 32.95,
+                "lipids": 22.65
+              },
+              "groupFood": "Vegetables",
+              "price": 0.77,
+              "food": [
+                "Garlic",
+                "Chicken Egg"
+              ],
+              "amount": [
+                "150",
+                "200"
+              ],
+              "type": "First"
+            }
+          ],
+          "price": 5.744999999999999
+        },
+        {
+          "name": "Menu 5",
+          "macroNutrients": {
+            "carboHydrates": 705.1700000000001,
+            "proteins": 183.456,
+            "lipids": 98.37799999999999
+          },
+          "plates": [
+            {
+              "name": "Ice cream with fruits",
+              "macroNutrients": {
+                "carboHydrates": 84.55,
+                "proteins": 14.350000000000001,
+                "lipids": 30.849999999999998
+              },
+              "groupFood": "Fruits",
+              "price": 1.75,
+              "food": [
+                "Ice Cream",
+                "Kiwi",
+                "BlueBerry"
+              ],
+              "amount": [
+                "300",
+                "50",
+                "50"
+              ],
+              "type": "Dessert"
+            },
+            {
+              "name": "Chicken rice",
+              "macroNutrients": {
+                "carboHydrates": 330.30000000000007,
+                "proteins": 136,
+                "lipids": 58.39999999999999
+              },
+              "groupFood": "Cereals",
+              "price": 2.51,
+              "food": [
+                "Integral rice",
+                "Chicken"
+              ],
+              "amount": [
+                "450",
+                "500"
+              ],
+              "type": "Second"
+            },
+            {
+              "name": "squash stuffed with rice",
+              "macroNutrients": {
+                "carboHydrates": 290.32,
+                "proteins": 33.106,
+                "lipids": 9.128
+              },
+              "groupFood": "Vegetables",
+              "price": 0.754,
+              "food": [
+                "Pumpkin",
+                "Integral rice"
+              ],
+              "amount": [
+                "318",
+                "386"
+              ],
+              "type": "Starter"
+            }
+          ],
+          "price": 5.013999999999999
+        }
+      ],
+      "plates": [
+        {
+          "name": "Macedonia",
+          "macroNutrients": {
+            "carboHydrates": 77,
+            "proteins": 80.9,
+            "lipids": 129
+          },
+          "groupFood": "Fruits",
+          "price": 1.043,
+          "food": [
+            "Apple",
+            "Pear",
+            "Strawberry"
+          ],
+          "amount": [
+            "150",
+            "100",
+            "200"
+          ],
+          "type": "Dessert"
+        },
+        {
+          "name": "Chocolate Mousse with Catalan Cream",
+          "macroNutrients": {
+            "carboHydrates": 67,
+            "proteins": 14.55,
+            "lipids": 26.550000000000004
+          },
+          "groupFood": "Dairy",
+          "price": 2.1,
+          "food": [
+            "Chocolate Mousse",
+            "Catalan cream"
+          ],
+          "amount": [
+            "250",
+            "50"
+          ],
+          "type": "Dessert"
+        }
+      ]
+    }
+  ]
 }

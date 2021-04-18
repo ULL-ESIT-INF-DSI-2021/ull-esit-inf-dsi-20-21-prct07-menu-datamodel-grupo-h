@@ -1,6 +1,13 @@
 {
     "entryPoints": [
-      "./src/ejercicio-1.ts"
+      "./src/food",
+      "./src/plate",
+      "./src/app.ts",
+      "./src/carte.ts",
+      "./src/collection.ts",
+      "./src/command.ts",
+      "./src/JsonDatabase.ts",
+      "/src/menu.ts"
     ],
     "out": "./docs"
 }
