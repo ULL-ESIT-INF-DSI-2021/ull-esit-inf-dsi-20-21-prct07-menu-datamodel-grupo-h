@@ -8,3 +8,6 @@ En esta práctica, deberemos llevar a cabo un diseño orientado a objetos del mo
 
 Además, se llevará a cabo un informe de la solución diseñada, haciendo hincapié en las decisiones de diseño que se han implementado.
 
+### 2. Objetivos
+
+- Aprender el uso de los módulos inquirer y lowdb.
