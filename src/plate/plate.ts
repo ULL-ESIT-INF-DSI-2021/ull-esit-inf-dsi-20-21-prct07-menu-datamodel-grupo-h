@@ -224,6 +224,7 @@ export abstract class Plate {
     '\n   * Proteins: ' + this.macroNutrients.proteins + '\n';
     result +=' - Predominant food group: ' + this.getPredominantGroupFood()+'\n';
 
+    console.log(result);
     return result;
   }
 

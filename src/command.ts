@@ -6,9 +6,9 @@ import {JsonDatabase} from './JsonDatabase';
 /**
  * Comandos a utilizar en la interfaz
  */
-enum Commands {SHOW = 'See the carta', ORDER = 'Do an order', FINISH = 'Finish command'}; 
+enum Commands {SHOW = 'See the carta', ORDER = 'Do an order', FINISH = 'Finish command'};
 
-enum MenusOrder {BASIC = 'Menu preestablecido', PERSONAL = 'Menu personalizado'}; 
+enum MenusOrder {BASIC = 'Menu preestablecido', PERSONAL = 'Menu personalizado'};
 /**
  * Clase que permitira que el usuario cree su propio menú
  * o que el usuario elija un menu predefinido
@@ -30,7 +30,7 @@ export class Command {
     this.plates = [];
   }
   /**
- * Método que mostrará por consola el menú principal 
+ * Método que mostrará por consola el menú principal
  *  de la comanda al usuario.
  */
   mainMenu() {
@@ -279,7 +279,7 @@ export class Command {
     });
   }
 
- /**
+  /**
  * Método que permitirá al usuario crear un menú desde cero.
  */
   chooseMenuFromZero() {

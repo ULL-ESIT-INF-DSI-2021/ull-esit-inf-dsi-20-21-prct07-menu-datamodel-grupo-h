@@ -11,7 +11,7 @@ import {Menu} from './menu';
 import {Carte} from './carte';
 
 enum Commands {FOOD = 'Foods', PLATE = 'Plates', MENU = 'Menus', CARTA = 'Cartes', QUIT = 'Quit'};
-enum Operations {ADD = 'Add', DELETE = 'Delete', RETURN = 'Return to menu'};
+enum Operations {ADD = 'Add', DELETE = 'Delete'};
 
 /**
  * Clase que permite modificar la base de datos.
@@ -100,8 +100,6 @@ class App {
               this.deleteCarta();
               break;
           }
-        case Operations.RETURN:
-          this.mainPrompt();
       }
     });
   }
@@ -184,7 +182,7 @@ class App {
    * Este metodo añadirá un plato en funcion de 
    * su categoría.
    */
-  addPlate(): void { // Controlar de alguna manera las entradas (validar)
+  addPlate(): void {
     const nameFood: string[] = [];
     this.collection.getFoods().forEach(function(element: Food) {
       nameFood.push(element.getName());
@@ -272,7 +270,6 @@ class App {
         this.collection.addMenu(answers['name'], answers['plates']);
       } catch (error) {
         console.log('The menu must have one plate from each category or at least three of them ');
-        this.addMenu();
       }
       inquirer.prompt([{
         type: 'list',
@@ -330,7 +327,7 @@ class App {
   /**
    * Método que permite eliminar un alimento creado.
    */
-  deleteFood(): void {
+  async deleteFood(): Promise<void> {
     const nameFood: string[] = [];
     this.collection.getFoods().forEach(function(element: Food) {
       nameFood.push(element.getName());
