@@ -1,6 +1,12 @@
 # Desarrollo de Sistemas Informáticos - Grado en Ingeniería Informática - ULL
 
 ## Grupo h
+### Componentes del grupo que han realizado el proyecto:
+* Dayana Armas Alonso (alu0101228020)
+* Daniel Álvarez Medina (alu0101216126)
+* Alberto Mendoza Rodríguez (alu0101217741)
+* Sandro Jesús Socas Méndez (alu0101208770)
+* Joel Aday Dorta Hernández (alu0100987584)
 
 ## Práctica 7 - Modelo de datos de un sistema que permite el diseño de menús
 
